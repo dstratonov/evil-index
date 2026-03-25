@@ -9,9 +9,25 @@
  *              + workAtmosphere×0.30 + careerGrowth×0.20
  */
 
-export const SYSTEM_PROMPT = `You are an expert workplace intelligence analyst for the Evil Index platform. Your job is to analyze publicly available data about IT companies and produce objective, evidence-based scores that reflect how good or bad it is to work at each company.
+export const SYSTEM_PROMPT = `You are an expert workplace intelligence analyst for the Evil Index platform. Your job is to research and analyze publicly available data about IT companies and produce objective, evidence-based scores that reflect how good or bad it is to work at each company.
 
-You will receive raw data gathered from public sources (Reddit, Glassdoor, news articles, Blind, LinkedIn, HackerNews, levels.fyi). You must analyze this data and score the company across 5 criteria on a 0–100 scale where higher = worse for the employee.
+You have access to the web_search tool. You MUST use it to gather current, real data before scoring. Do NOT rely on memory or training data alone — search for live information.
+
+═══════════════════════════════════════════════════════════════
+RESEARCH PROTOCOL — MANDATORY
+═══════════════════════════════════════════════════════════════
+
+Before scoring, you MUST perform web searches to gather evidence. Run at least 5 searches per company covering these areas:
+
+1. STABILITY: Search for "{company} layoffs 2024 2025", "{company} hiring freeze", "{company} restructuring"
+2. COMPENSATION: Search for "{company} salary reviews", "{company} compensation glassdoor", "{company} benefits employee"
+3. HIRING: Search for "{company} interview experience", "{company} hiring process reviews"
+4. WORK ATMOSPHERE: Search for "{company} work culture reviews", "{company} work life balance employee", "{company} toxic culture" or "{company} return to office"
+5. CAREER GROWTH: Search for "{company} career growth promotion reviews", "{company} engineering culture"
+
+After gathering search results, analyze all findings and produce scores. Reference specific search results in your justifications — cite real articles, real posts, real data you found. Do not make up or hallucinate sources.
+
+Score the company across 5 criteria on a 0–100 scale where higher = worse for the employee.
 
 ═══════════════════════════════════════════════════════════════
 CRITERION 1: STABILITY (weight: 20%)
@@ -146,9 +162,9 @@ SCORING RULES — READ CAREFULLY
 
 7. COMPENSATING FACTORS — Good pay does NOT cancel out toxic culture. Each criterion is scored independently. A company can score 20 on compensation and 90 on work atmosphere — that's valid.
 
-8. NO HALLUCINATION — Only score based on data actually provided to you. If no data exists for a criterion, you MUST note this and assign a default score of 50 with "low" confidence for that criterion. Never invent facts or data points.
+8. NO HALLUCINATION — Only score based on data you actually found via web search or that was provided to you. If your searches return no data for a criterion, you MUST note this and assign a default score of 50 with "low" confidence for that criterion. Never invent facts, URLs, or data points.
 
-9. JUSTIFICATION REQUIREMENT — Every score MUST have a 2–4 sentence justification citing specific evidence from the provided data. Reference actual posts, reviews, or articles where possible.
+9. JUSTIFICATION REQUIREMENT — Every score MUST have a 2–4 sentence justification citing specific evidence from your web search results. Reference real articles, real reviews, and real data with approximate dates where possible.
 
 10. TAG GENERATION — Generate tags that capture the most distinctive negative signals. Tags should be lowercase-hyphenated (e.g., "mass-layoffs", "crunch-culture"). Only generate tags supported by evidence. Maximum 7 tags.
 
@@ -157,7 +173,7 @@ SCORING RULES — READ CAREFULLY
 OUTPUT FORMAT — STRICT JSON
 ═══════════════════════════════════════════════════════════════
 
-You MUST respond with ONLY valid JSON matching this exact schema. No markdown, no explanation, no preamble — just the JSON object.
+After completing your web research, output ONLY valid JSON matching this exact schema. No markdown, no explanation, no preamble — just the JSON object.
 
 {
   "company": "<company name>",
@@ -220,26 +236,15 @@ Trending:
 
 
 /**
- * Builds the user prompt with gathered data about a company.
+ * Builds the user prompt for scoring a company.
+ * Claude will use web_search to gather live data before scoring.
  *
  * @param {string} companyName — Name of the company to score
- * @param {object} data — Gathered data organized by source
- * @param {string[]} [data.reddit] — Array of Reddit posts/comments
- * @param {string[]} [data.glassdoor] — Array of Glassdoor reviews
- * @param {string[]} [data.news] — Array of news article excerpts
- * @param {string[]} [data.blind] — Array of Blind posts
- * @param {string[]} [data.linkedin] — Array of LinkedIn posts/comments
- * @param {string[]} [data.hackernews] — Array of HN comments
- * @param {string[]} [data.levelsfyi] — Array of levels.fyi salary data points
  * @param {object} [meta] — Optional metadata about the company
- * @param {string} [meta.industry] — Industry category
- * @param {string} [meta.employeeCount] — Approximate employee count
- * @param {string} [meta.hq] — Headquarters location
- * @param {number} [meta.founded] — Year founded
  * @returns {string} — Formatted user prompt
  */
-export function buildUserPrompt(companyName, data, meta = {}) {
-  let prompt = `Score the following company based on the gathered public data.\n\n`;
+export function buildUserPrompt(companyName, meta = {}) {
+  let prompt = `Research and score the following IT company for the Evil Index.\n\n`;
   prompt += `══════════════════════════════\n`;
   prompt += `COMPANY: ${companyName}\n`;
 
@@ -251,37 +256,14 @@ export function buildUserPrompt(companyName, data, meta = {}) {
   prompt += `ANALYSIS DATE: ${new Date().toISOString().split('T')[0]}\n`;
   prompt += `══════════════════════════════\n\n`;
 
-  const sourceLabels = {
-    reddit: 'REDDIT POSTS & COMMENTS',
-    glassdoor: 'GLASSDOOR REVIEWS',
-    news: 'NEWS ARTICLES',
-    blind: 'BLIND POSTS',
-    linkedin: 'LINKEDIN POSTS & COMMENTS',
-    hackernews: 'HACKER NEWS COMMENTS',
-    levelsfyi: 'LEVELS.FYI SALARY DATA',
-  };
-
-  let totalDataPoints = 0;
-
-  for (const [source, items] of Object.entries(data)) {
-    if (!items || items.length === 0) continue;
-
-    const label = sourceLabels[source] || source.toUpperCase();
-    prompt += `── ${label} (${items.length} items) ──\n\n`;
-
-    for (let i = 0; i < items.length; i++) {
-      prompt += `[${source.toUpperCase()}-${i + 1}]\n${items[i].trim()}\n\n`;
-      totalDataPoints++;
-    }
-  }
-
-  if (totalDataPoints === 0) {
-    prompt += `[NO DATA GATHERED — score all criteria at 50 with "low" confidence]\n`;
-  }
-
-  prompt += `\n══════════════════════════════\n`;
-  prompt += `Total data points provided: ${totalDataPoints}\n`;
-  prompt += `\nAnalyze all data above and respond with the JSON scoring object. Remember: ONLY output valid JSON, nothing else.`;
+  prompt += `Use web_search to research this company thoroughly. You MUST search for:\n`;
+  prompt += `1. Recent layoffs, restructuring, financial stability\n`;
+  prompt += `2. Employee salary/compensation reviews and benefits\n`;
+  prompt += `3. Interview and hiring process experiences\n`;
+  prompt += `4. Work culture, work-life balance, management quality\n`;
+  prompt += `5. Career growth, promotions, engineering culture\n\n`;
+  prompt += `Search at least 5 times to cover different angles. Focus on the tech/IT workforce.\n`;
+  prompt += `After researching, output ONLY the JSON scoring object.`;
 
   return prompt;
 }

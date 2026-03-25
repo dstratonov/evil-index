@@ -21,7 +21,7 @@ function calculateEvilScore(scores) {
 }
 
 /**
- * Derive overall confidence from criterion confidences and data quality.
+ * Derive overall confidence from criterion confidences.
  */
 function deriveOverallConfidence(scores) {
   const levels = { high: 3, medium: 2, low: 1 };
@@ -43,46 +43,123 @@ function getVerdict(score) {
 }
 
 /**
- * Score a single company using Claude.
+ * Extract the final text block from a response that may contain
+ * web_search tool_use / tool_result blocks interleaved with text.
+ */
+function extractFinalText(response) {
+  const textBlocks = response.content.filter((block) => block.type === 'text');
+  if (textBlocks.length === 0) {
+    throw new Error('No text blocks in response');
+  }
+  // The last text block should contain the JSON scoring
+  return textBlocks[textBlocks.length - 1].text.trim();
+}
+
+/**
+ * Count how many web searches were performed from the response.
+ */
+function countSearches(response) {
+  return response.content.filter(
+    (block) => block.type === 'server_tool_use' && block.name === 'web_search',
+  ).length;
+}
+
+/**
+ * Extract search queries from the response for logging.
+ */
+function extractSearchQueries(response) {
+  return response.content
+    .filter((block) => block.type === 'server_tool_use' && block.name === 'web_search')
+    .map((block) => block.input?.query || '(unknown)');
+}
+
+/**
+ * Score a single company using Claude with web search.
  *
  * @param {object} opts
  * @param {string} opts.apiKey — Anthropic API key
  * @param {string} opts.companyName — Company to score
- * @param {object} opts.data — Gathered data by source { reddit: [...], glassdoor: [...], ... }
  * @param {object} [opts.meta] — Company metadata { industry, employeeCount, hq, founded }
- * @param {string} [opts.model] — Claude model to use (default: claude-sonnet-4-20250514)
+ * @param {string} [opts.model] — Claude model (default: claude-sonnet-4-20250514)
+ * @param {number} [opts.maxSearches] — Max web searches per company (default: 15)
  * @returns {Promise<object>} — Scored company object ready for the frontend
  */
-export async function scoreCompany({ apiKey, companyName, data, meta = {}, model = 'claude-sonnet-4-20250514' }) {
+export async function scoreCompany({ apiKey, companyName, meta = {}, model = 'claude-sonnet-4-20250514', maxSearches = 15 }) {
   const client = new Anthropic({ apiKey });
 
-  const userPrompt = buildUserPrompt(companyName, data, meta);
+  const userPrompt = buildUserPrompt(companyName, meta);
 
-  console.log(`[Evil Index] Scoring ${companyName}...`);
-  console.log(`[Evil Index] Data points: ${Object.values(data).flat().length}`);
-  console.log(`[Evil Index] Sources: ${Object.keys(data).filter((k) => data[k]?.length > 0).join(', ')}`);
+  console.log(`[Evil Index] Scoring ${companyName} (with web search)...`);
 
-  const response = await client.messages.create({
-    model,
-    max_tokens: 4096,
-    system: SYSTEM_PROMPT,
-    messages: [{ role: 'user', content: userPrompt }],
-  });
-
-  const rawText = response.content[0].text.trim();
-
-  // Parse JSON — strip markdown fences if the model wraps it
-  let jsonStr = rawText;
-  if (jsonStr.startsWith('```')) {
-    jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+  // Retry with backoff for rate limits
+  let response;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      response = await client.messages.create({
+        model,
+        max_tokens: 16000,
+        system: SYSTEM_PROMPT,
+        tools: [
+          {
+            type: 'web_search_20250305',
+            name: 'web_search',
+            max_uses: maxSearches,
+          },
+        ],
+        messages: [{ role: 'user', content: userPrompt }],
+      });
+      break;
+    } catch (err) {
+      if (err.status === 429 && attempt < 3) {
+        const retryAfter = parseInt(err.headers?.['retry-after'] || '60', 10);
+        const waitSecs = Math.min(retryAfter, 120);
+        console.log(`[Evil Index] Rate limited. Waiting ${waitSecs}s before retry ${attempt + 1}/3...`);
+        await new Promise((r) => setTimeout(r, waitSecs * 1000));
+      } else {
+        throw err;
+      }
+    }
   }
+
+  const searchCount = countSearches(response);
+  const queries = extractSearchQueries(response);
+  console.log(`[Evil Index] ${companyName}: ${searchCount} web searches performed`);
+  if (queries.length > 0) {
+    for (const q of queries) {
+      console.log(`[Evil Index]   -> "${q}"`);
+    }
+  }
+
+  // Extract the final text (JSON) from the response
+  const rawText = extractFinalText(response);
+
+  // Extract JSON from response — handle preamble text, markdown fences, and <cite> tags
+  let jsonStr = rawText;
+
+  // Strip markdown fences
+  if (jsonStr.includes('```')) {
+    const fenceMatch = jsonStr.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/);
+    if (fenceMatch) jsonStr = fenceMatch[1];
+  }
+
+  // If there's text before the JSON, extract just the JSON object
+  const jsonStart = jsonStr.indexOf('{');
+  const jsonEnd = jsonStr.lastIndexOf('}');
+  if (jsonStart !== -1 && jsonEnd !== -1 && jsonStart < jsonEnd) {
+    jsonStr = jsonStr.slice(jsonStart, jsonEnd + 1);
+  }
+
+  // Strip <cite> tags that web search injects into text
+  jsonStr = jsonStr.replace(/<cite[^>]*>|<\/cite>/g, '');
+  // Strip any other HTML-like tags
+  jsonStr = jsonStr.replace(/<[^>]+>/g, '');
 
   let result;
   try {
     result = JSON.parse(jsonStr);
   } catch (err) {
     console.error('[Evil Index] Failed to parse LLM response as JSON:');
-    console.error(rawText.slice(0, 500));
+    console.error(jsonStr.slice(0, 500));
     throw new Error(`LLM returned invalid JSON: ${err.message}`);
   }
 
@@ -91,14 +168,8 @@ export async function scoreCompany({ apiKey, companyName, data, meta = {}, model
   const verdict = getVerdict(evilScore);
   const overallConfidence = result.overallConfidence || deriveOverallConfidence(result.scores);
 
-  // Compute source weights from actual data volume
-  const sourceWeights = {};
-  const totalItems = Object.values(data).flat().length || 1;
-  for (const [source, items] of Object.entries(data)) {
-    if (items && items.length > 0) {
-      sourceWeights[source] = Math.round((items.length / totalItems) * 100) / 100;
-    }
-  }
+  // Estimate source distribution from search queries
+  const sourceWeights = estimateSourceWeights(queries);
 
   // Build the frontend-ready company object
   const scored = {
@@ -133,12 +204,11 @@ export async function scoreCompany({ apiKey, companyName, data, meta = {}, model
     trending: result.trending || 'stable',
     trendingReason: result.trendingReason || '',
     sources: sourceWeights,
-    signals: result.dataQuality?.totalDataPoints || Object.values(data).flat().length,
+    signals: result.dataQuality?.totalDataPoints || searchCount,
     dataQuality: result.dataQuality || null,
     lastUpdated: new Date().toISOString().split('T')[0],
-
-    // Raw LLM response for debugging
-    _raw: result,
+    _searchQueries: queries,
+    _searchCount: searchCount,
     _model: model,
     _tokensUsed: response.usage,
   };
@@ -149,25 +219,43 @@ export async function scoreCompany({ apiKey, companyName, data, meta = {}, model
 }
 
 /**
- * Score multiple companies in sequence.
- *
- * @param {object} opts
- * @param {string} opts.apiKey
- * @param {Array<{name: string, data: object, meta?: object}>} opts.companies
- * @param {string} [opts.model]
- * @returns {Promise<object[]>}
+ * Estimate source weights from the search queries performed.
  */
-export async function scoreCompanies({ apiKey, companies, model }) {
+function estimateSourceWeights(queries) {
+  const sources = { news: 0, glassdoor: 0, reddit: 0, linkedin: 0, blind: 0, other: 0 };
+  for (const q of queries) {
+    const ql = q.toLowerCase();
+    if (ql.includes('glassdoor')) sources.glassdoor++;
+    else if (ql.includes('reddit')) sources.reddit++;
+    else if (ql.includes('linkedin')) sources.linkedin++;
+    else if (ql.includes('blind')) sources.blind++;
+    else sources.news++;
+  }
+  const total = queries.length || 1;
+  const weights = {};
+  for (const [key, count] of Object.entries(sources)) {
+    if (count > 0) {
+      weights[key] = Math.round((count / total) * 100) / 100;
+    }
+  }
+  return weights;
+}
+
+/**
+ * Score multiple companies in sequence.
+ */
+export async function scoreCompanies({ apiKey, companies, model, maxSearches }) {
   const results = [];
 
-  for (const company of companies) {
+  for (let i = 0; i < companies.length; i++) {
+    const company = companies[i];
     try {
       const result = await scoreCompany({
         apiKey,
         companyName: company.name,
-        data: company.data,
         meta: company.meta,
         model,
+        maxSearches,
       });
       results.push(result);
     } catch (err) {
@@ -179,9 +267,10 @@ export async function scoreCompanies({ apiKey, companies, model }) {
       });
     }
 
-    // Small delay to avoid rate limits
-    if (companies.indexOf(company) < companies.length - 1) {
-      await new Promise((r) => setTimeout(r, 1000));
+    // Delay between companies to avoid rate limits (web search is heavier)
+    if (i < companies.length - 1) {
+      console.log('[Evil Index] Waiting 3s before next company...');
+      await new Promise((r) => setTimeout(r, 3000));
     }
   }
 

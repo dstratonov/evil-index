@@ -1,0 +1,13 @@
+{
+  "name": "evil-index-pipeline",
+  "version": "0.1.0",
+  "description": "Evil Index scoring pipeline — gathers public data and scores companies via Claude",
+  "type": "module",
+  "scripts": {
+    "score": "node run.js",
+    "score:batch": "node run.js --batch companies.json"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}

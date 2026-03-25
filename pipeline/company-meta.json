@@ -1,0 +1,72 @@
+{
+  "Google": {
+    "ticker": "GOOG",
+    "logo": "G",
+    "employeeCount": "180,000+",
+    "founded": 1998,
+    "hq": "Mountain View, CA"
+  },
+  "Amazon": {
+    "ticker": "AMZN",
+    "logo": "AZ",
+    "employeeCount": "1,500,000+",
+    "founded": 1994,
+    "hq": "Seattle, WA"
+  },
+  "Meta": {
+    "ticker": "META",
+    "logo": "M",
+    "employeeCount": "67,000+",
+    "founded": 2004,
+    "hq": "Menlo Park, CA"
+  },
+  "Apple": {
+    "ticker": "AAPL",
+    "logo": "AP",
+    "employeeCount": "160,000+",
+    "founded": 1976,
+    "hq": "Cupertino, CA"
+  },
+  "Microsoft": {
+    "ticker": "MSFT",
+    "logo": "MS",
+    "employeeCount": "220,000+",
+    "founded": 1975,
+    "hq": "Redmond, WA"
+  },
+  "Netflix": {
+    "ticker": "NFLX",
+    "logo": "NF",
+    "employeeCount": "13,000+",
+    "founded": 1997,
+    "hq": "Los Gatos, CA"
+  },
+  "Uber": {
+    "ticker": "UBER",
+    "logo": "UB",
+    "employeeCount": "32,000+",
+    "founded": 2009,
+    "hq": "San Francisco, CA"
+  },
+  "Salesforce": {
+    "ticker": "CRM",
+    "logo": "SF",
+    "employeeCount": "73,000+",
+    "founded": 1999,
+    "hq": "San Francisco, CA"
+  },
+  "Oracle": {
+    "ticker": "ORCL",
+    "logo": "OR",
+    "employeeCount": "160,000+",
+    "founded": 1977,
+    "hq": "Austin, TX"
+  },
+  "IBM": {
+    "ticker": "IBM",
+    "logo": "IB",
+    "employeeCount": "280,000+",
+    "founded": 1911,
+    "hq": "Armonk, NY"
+  }
+}

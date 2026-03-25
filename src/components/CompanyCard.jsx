@@ -3,8 +3,9 @@ import EvilGauge from './EvilGauge';
 import VerdictStamp from './VerdictStamp';
 import { getScoreColor, getVerdictColor, breakdownLabels, criteriaWeights } from '../data/companies';
 
-const BreakdownBar = ({ label, value, weight, delay, visible }) => {
+const BreakdownBar = ({ label, value, weight, confidence, delay, visible }) => {
   const color = getScoreColor(value);
+  const confColor = { high: '#00e676', medium: '#ffc400', low: '#ff1744' }[confidence] || '#ffc400';
 
   return (
     <div style={{ marginBottom: 6 }}>
@@ -12,6 +13,7 @@ const BreakdownBar = ({ label, value, weight, delay, visible }) => {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
+          alignItems: 'center',
           marginBottom: 3,
           fontSize: 10,
           fontFamily: "'JetBrains Mono', monospace",
@@ -22,6 +24,11 @@ const BreakdownBar = ({ label, value, weight, delay, visible }) => {
           <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: 8 }}>
             {Math.round(weight * 100)}%w
           </span>
+          {confidence && (
+            <span style={{ color: confColor, fontSize: 7, marginLeft: 4, opacity: 0.6 }}>
+              {'\u25CF'}
+            </span>
+          )}
         </span>
         <span style={{ color, fontWeight: 600 }}>{value}%</span>
       </div>
@@ -318,7 +325,7 @@ const CompanyCard = ({ company, index }) => {
       {/* Expandable section */}
       <div
         style={{
-          maxHeight: expanded ? 700 : 0,
+          maxHeight: expanded ? 2000 : 0,
           opacity: expanded ? 1 : 0,
           overflow: 'hidden',
           transition: 'max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease',
@@ -342,10 +349,69 @@ const CompanyCard = ({ company, index }) => {
           </div>
           <div className="breakdown-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 24px' }}>
             {Object.entries(company.breakdown).map(([key, value], i) => (
-              <BreakdownBar key={key} label={breakdownLabels[key]} value={value} weight={criteriaWeights[key]} delay={i * 80} visible={expanded} />
+              <BreakdownBar key={key} label={breakdownLabels[key]} value={value} weight={criteriaWeights[key]} confidence={company.criterionConfidence?.[key]} delay={i * 80} visible={expanded} />
             ))}
           </div>
         </div>
+
+        {/* Criterion analysis / justifications */}
+        {company.justifications && (
+          <div style={{ marginBottom: 20 }}>
+            <div
+              style={{
+                fontSize: 9,
+                letterSpacing: '3px',
+                color: 'rgba(255,255,255,0.2)',
+                textTransform: 'uppercase',
+                marginBottom: 12,
+                fontFamily: "'JetBrains Mono', monospace",
+              }}
+            >
+              &mdash;&mdash; CRITERION ANALYSIS &mdash;&mdash;
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {Object.entries(company.justifications).map(([key, text]) => {
+                const score = company.breakdown?.[key];
+                const color = score != null ? getScoreColor(score) : 'rgba(255,255,255,0.3)';
+                const conf = company.criterionConfidence?.[key];
+                const confColor = { high: '#00e676', medium: '#ffc400', low: '#ff1744' }[conf] || '#ffc400';
+                return (
+                  <div key={key} style={{ borderLeft: `2px solid ${color}40`, paddingLeft: 10 }}>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      marginBottom: 4,
+                      fontSize: 10,
+                      fontFamily: "'JetBrains Mono', monospace",
+                    }}>
+                      <span style={{ color, fontWeight: 700 }}>
+                        {breakdownLabels[key] || key}
+                      </span>
+                      {score != null && (
+                        <span style={{ color, fontSize: 9, opacity: 0.7 }}>{score}/100</span>
+                      )}
+                      {conf && (
+                        <span style={{ color: confColor, fontSize: 8, opacity: 0.5, letterSpacing: '1px' }}>
+                          {conf.toUpperCase()}
+                        </span>
+                      )}
+                    </div>
+                    <p style={{
+                      fontSize: 10,
+                      lineHeight: 1.7,
+                      color: 'rgba(255,255,255,0.4)',
+                      fontFamily: "'JetBrains Mono', monospace",
+                      margin: 0,
+                    }}>
+                      {text}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {/* Intel summary */}
         <div style={{ marginBottom: 16 }}>
@@ -373,6 +439,18 @@ const CompanyCard = ({ company, index }) => {
           >
             {company.intelSummary}
           </p>
+          {company.trendingReason && (
+            <p style={{
+              fontSize: 10,
+              lineHeight: 1.6,
+              color: 'rgba(255,255,255,0.3)',
+              fontFamily: "'JetBrains Mono', monospace",
+              marginTop: 8,
+              fontStyle: 'italic',
+            }}>
+              Trend: {company.trendingReason}
+            </p>
+          )}
         </div>
 
         {/* Sources and meta */}

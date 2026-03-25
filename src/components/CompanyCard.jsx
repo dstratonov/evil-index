@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import EvilGauge from './EvilGauge';
 import VerdictStamp from './VerdictStamp';
-import { getScoreColor, getVerdictColor, breakdownLabels } from '../data/companies';
+import { getScoreColor, getVerdictColor, breakdownLabels, criteriaWeights } from '../data/companies';
 
-const BreakdownBar = ({ label, value, delay, visible }) => {
+const BreakdownBar = ({ label, value, weight, delay, visible }) => {
   const color = getScoreColor(value);
 
   return (
@@ -17,7 +17,12 @@ const BreakdownBar = ({ label, value, delay, visible }) => {
           fontFamily: "'JetBrains Mono', monospace",
         }}
       >
-        <span style={{ color: 'rgba(255,255,255,0.45)' }}>{label}</span>
+        <span style={{ color: 'rgba(255,255,255,0.45)' }}>
+          {label}{' '}
+          <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: 8 }}>
+            {Math.round(weight * 100)}%w
+          </span>
+        </span>
         <span style={{ color, fontWeight: 600 }}>{value}%</span>
       </div>
       <div
@@ -117,6 +122,45 @@ const TrendIndicator = ({ trend }) => {
       }}
     >
       <span>{c.symbol}</span>
+      {c.label}
+    </span>
+  );
+};
+
+const ConfidenceBadge = ({ level }) => {
+  const config = {
+    high: { color: '#00e676', label: 'HIGH CONFIDENCE', bars: 3 },
+    medium: { color: '#ffc400', label: 'MEDIUM CONFIDENCE', bars: 2 },
+    low: { color: '#ff1744', label: 'LOW CONFIDENCE', bars: 1 },
+  };
+  const c = config[level] || config.medium;
+
+  return (
+    <span
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 4,
+        fontSize: 8,
+        fontFamily: "'JetBrains Mono', monospace",
+        color: c.color,
+        letterSpacing: '1px',
+        opacity: 0.7,
+      }}
+    >
+      <span style={{ display: 'inline-flex', gap: 1, alignItems: 'flex-end' }}>
+        {[1, 2, 3].map((i) => (
+          <span
+            key={i}
+            style={{
+              width: 3,
+              height: 4 + i * 3,
+              background: i <= c.bars ? c.color : 'rgba(255,255,255,0.1)',
+              borderRadius: 1,
+            }}
+          />
+        ))}
+      </span>
       {c.label}
     </span>
   );
@@ -235,6 +279,7 @@ const CompanyCard = ({ company, index }) => {
                       ${company.ticker}
                     </span>
                     <TrendIndicator trend={company.trending} />
+                    <ConfidenceBadge level={company.confidence} />
                   </div>
                 </div>
               </div>
@@ -295,9 +340,9 @@ const CompanyCard = ({ company, index }) => {
           >
             &mdash;&mdash; THREAT BREAKDOWN &mdash;&mdash;
           </div>
-          <div className="breakdown-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px 24px' }}>
+          <div className="breakdown-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 24px' }}>
             {Object.entries(company.breakdown).map(([key, value], i) => (
-              <BreakdownBar key={key} label={breakdownLabels[key]} value={value} delay={i * 80} visible={expanded} />
+              <BreakdownBar key={key} label={breakdownLabels[key]} value={value} weight={criteriaWeights[key]} delay={i * 80} visible={expanded} />
             ))}
           </div>
         </div>

@@ -79,7 +79,7 @@ const App = () => {
             }}
           >
             <span>
-              {filteredCompanies.length} DOSSIER{filteredCompanies.length !== 1 ? 'S' : ''} FOUND
+              {filteredCompanies.length} REPORT{filteredCompanies.length !== 1 ? 'S' : ''} FOUND
             </span>
             <span style={{ fontSize: 9 }}>ALL DATA FROM PUBLIC SOURCES</span>
           </div>
@@ -100,7 +100,7 @@ const App = () => {
               }}
             >
               <div style={{ fontSize: 48, marginBottom: 16, opacity: 0.3 }}>{'\u25CB'}</div>
-              <div style={{ fontSize: 13, letterSpacing: '2px' }}>NO MATCHING DOSSIERS</div>
+              <div style={{ fontSize: 13, letterSpacing: '2px' }}>NO MATCHING REPORTS</div>
               <div style={{ fontSize: 10, marginTop: 8 }}>Adjust search parameters or filters</div>
             </div>
           )}
@@ -118,9 +118,9 @@ const App = () => {
             lineHeight: 1.8,
           }}
         >
-          EVIL INDEX v0.1.0 &middot; AGGREGATED FROM PUBLIC SOURCES &middot; FOR INFORMATIONAL PURPOSES ONLY
+          ANXIETY INDEX v0.1.0 &middot; AGGREGATED FROM PUBLIC SOURCES &middot; FOR INFORMATIONAL PURPOSES ONLY
           <br />
-          SCORES REPRESENT ALGORITHMIC ANALYSIS OF PUBLIC SENTIMENT, NOT VERIFIED FACTS
+          SCORES DERIVED FROM PUBLIC EMPLOYEE REVIEWS, NEWS, AND WORKPLACE DATA
         </footer>
       </div>
     </div>

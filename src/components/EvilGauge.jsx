@@ -136,7 +136,7 @@ const EvilGauge = ({ score, size = 160 }) => {
             marginTop: 4,
           }}
         >
-          EVIL INDEX
+          ANXIETY
         </div>
       </div>
     </div>

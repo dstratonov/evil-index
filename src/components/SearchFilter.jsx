@@ -2,17 +2,17 @@ import React from 'react';
 
 const verdicts = [
   { label: 'ALL', value: 'all', color: '#8888a0' },
-  { label: 'TOXIC', value: 'TOXIC', color: '#ff1744' },
-  { label: 'HARMFUL', value: 'HARMFUL', color: '#ff6d00' },
-  { label: 'CAUTION', value: 'CAUTION', color: '#ffc400' },
-  { label: 'MOSTLY OK', value: 'MOSTLY OK', color: '#00e676' },
+  { label: 'CRITICAL', value: 'CRITICAL', color: '#ff1744' },
+  { label: 'HIGH', value: 'HIGH', color: '#ff6d00' },
+  { label: 'ELEVATED', value: 'ELEVATED', color: '#ffc400' },
+  { label: 'LOW', value: 'LOW', color: '#00e676' },
 ];
 
 const sortOptions = [
-  { label: 'Evil Score (High \u2192 Low)', value: 'score-desc' },
-  { label: 'Evil Score (Low \u2192 High)', value: 'score-asc' },
+  { label: 'Anxiety Level (High \u2192 Low)', value: 'score-desc' },
+  { label: 'Anxiety Level (Low \u2192 High)', value: 'score-asc' },
   { label: 'Company Name', value: 'name' },
-  { label: 'Most Signals', value: 'signals' },
+  { label: 'Most Data Points', value: 'signals' },
 ];
 
 const SearchFilter = ({ search, onSearchChange, activeVerdict, onVerdictChange, sort, onSortChange }) => {

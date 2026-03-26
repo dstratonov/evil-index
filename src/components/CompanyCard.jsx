@@ -223,7 +223,7 @@ const CompanyCard = ({ company, index }) => {
           userSelect: 'none',
         }}
       >
-        DOSSIER #{String(company.id).padStart(3, '0')}
+        REPORT #{String(company.id).padStart(3, '0')}
       </div>
 
       {/* Main header */}
@@ -345,7 +345,7 @@ const CompanyCard = ({ company, index }) => {
               fontFamily: "'JetBrains Mono', monospace",
             }}
           >
-            &mdash;&mdash; THREAT BREAKDOWN &mdash;&mdash;
+            &mdash;&mdash; STRESS FACTORS &mdash;&mdash;
           </div>
           <div className="breakdown-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 24px' }}>
             {Object.entries(company.breakdown).map(([key, value], i) => (
@@ -367,7 +367,7 @@ const CompanyCard = ({ company, index }) => {
                 fontFamily: "'JetBrains Mono', monospace",
               }}
             >
-              &mdash;&mdash; CRITERION ANALYSIS &mdash;&mdash;
+              &mdash;&mdash; DETAILED ANALYSIS &mdash;&mdash;
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {Object.entries(company.justifications).map(([key, text]) => {
@@ -425,7 +425,7 @@ const CompanyCard = ({ company, index }) => {
               fontFamily: "'JetBrains Mono', monospace",
             }}
           >
-            &mdash;&mdash; INTELLIGENCE SUMMARY &mdash;&mdash;
+            &mdash;&mdash; ANALYSIS SUMMARY &mdash;&mdash;
           </div>
           <p
             style={{
@@ -476,7 +476,7 @@ const CompanyCard = ({ company, index }) => {
               textAlign: 'right',
             }}
           >
-            {company.signals.toLocaleString()} signals &middot; {company.lastUpdated}
+            {company.signals.toLocaleString()} data points &middot; {company.lastUpdated}
           </div>
         </div>
       </div>
@@ -493,7 +493,7 @@ const CompanyCard = ({ company, index }) => {
           transition: 'color 0.2s ease',
         }}
       >
-        {expanded ? '\u25B2 COLLAPSE DOSSIER' : '\u25BC EXPAND DOSSIER'}
+        {expanded ? '\u25B2 HIDE DETAILS' : '\u25BC VIEW DETAILS'}
       </div>
     </div>
   );

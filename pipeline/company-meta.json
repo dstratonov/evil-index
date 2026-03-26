@@ -95,14 +95,6 @@
     "founded": 2006,
     "hq": "Ottawa, Canada"
   },
-  "Accenture": {
-    "ticker": "ACN",
-    "logo": "A",
-    "industry": "IT Consulting",
-    "employeeCount": "738,000+",
-    "founded": 1989,
-    "hq": "Dublin, Ireland"
-  },
   "IBM": {
     "ticker": "IBM",
     "logo": "IBM",
@@ -110,110 +102,6 @@
     "employeeCount": "270,000+",
     "founded": 1911,
     "hq": "Armonk, New York"
-  },
-  "Deloitte": {
-    "ticker": "DEL",
-    "logo": "D",
-    "industry": "IT Consulting",
-    "employeeCount": "457,000+",
-    "founded": 1845,
-    "hq": "New York, New York"
-  },
-  "PwC": {
-    "ticker": "PWC",
-    "logo": "PW",
-    "industry": "IT Consulting",
-    "employeeCount": "370,000+",
-    "founded": 1849,
-    "hq": "London, United Kingdom"
-  },
-  "Tata Consultancy Services": {
-    "ticker": "TCS",
-    "logo": "TCS",
-    "industry": "IT Consulting",
-    "employeeCount": "615,000+",
-    "founded": 1968,
-    "hq": "Mumbai, India"
-  },
-  "Cognizant": {
-    "ticker": "CTSH",
-    "logo": "C",
-    "industry": "IT Consulting",
-    "employeeCount": "347,700+",
-    "founded": 1994,
-    "hq": "Teaneck, New Jersey"
-  },
-  "Infosys": {
-    "ticker": "INFY",
-    "logo": "I",
-    "industry": "IT Consulting",
-    "employeeCount": "335,000+",
-    "founded": 1981,
-    "hq": "Bengaluru, India"
-  },
-  "Capgemini": {
-    "ticker": "CAP",
-    "logo": "C",
-    "industry": "IT Consulting",
-    "employeeCount": "350,000+",
-    "founded": 1967,
-    "hq": "Paris, France"
-  },
-  "Wipro": {
-    "ticker": "WIT",
-    "logo": "W",
-    "industry": "IT Consulting",
-    "employeeCount": "233,000+",
-    "founded": 1945,
-    "hq": "Bengaluru, India"
-  },
-  "EY": {
-    "ticker": "EY",
-    "logo": "EY",
-    "industry": "IT Consulting",
-    "employeeCount": "365,000+",
-    "founded": 1989,
-    "hq": "London, United Kingdom"
-  },
-  "KPMG": {
-    "ticker": "KPMG",
-    "logo": "K",
-    "industry": "IT Consulting",
-    "employeeCount": "265,000+",
-    "founded": 1987,
-    "hq": "Amstelveen, Netherlands"
-  },
-  "DXC Technology": {
-    "ticker": "DXC",
-    "logo": "DX",
-    "industry": "IT Consulting",
-    "employeeCount": "130,000+",
-    "founded": 2017,
-    "hq": "Ashburn, Virginia"
-  },
-  "McKinsey Digital": {
-    "ticker": "MK",
-    "logo": "M",
-    "industry": "IT Consulting",
-    "employeeCount": "45,000+",
-    "founded": 1926,
-    "hq": "New York, New York"
-  },
-  "Boston Consulting Group": {
-    "ticker": "BCG",
-    "logo": "BC",
-    "industry": "IT Consulting",
-    "employeeCount": "32,000+",
-    "founded": 1963,
-    "hq": "Boston, Massachusetts"
-  },
-  "Bain & Company": {
-    "ticker": "BAIN",
-    "logo": "B",
-    "industry": "IT Consulting",
-    "employeeCount": "19,000+",
-    "founded": 1973,
-    "hq": "Boston, Massachusetts"
   },
   "Snowflake": {
     "ticker": "SNOW",

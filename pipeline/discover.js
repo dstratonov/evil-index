@@ -52,23 +52,24 @@ if (!apiKey) {
 
 const targetCount = parseInt(args.count, 10) || 100;
 
-const SYSTEM_PROMPT = `You are a research assistant for the Evil Index platform. Your job is to compile a comprehensive list of IT and technology companies that are relevant for workplace analysis.
+const SYSTEM_PROMPT = `You are a research assistant for the Anxiety Index platform. Your job is to compile a comprehensive list of IT and technology companies that are relevant for workplace stress analysis.
 
 You have access to web_search. Use it to find current, authoritative lists of top tech employers.
 
 REQUIREMENTS:
 - Find exactly ${targetCount} companies (or as close as possible)
 - Focus on IT/tech companies where software engineers, data scientists, product managers, and other tech workers are employed
+- Do NOT include IT consulting or professional services firms (no Accenture, Deloitte, PwC, EY, KPMG, TCS, Infosys, Wipro, Cognizant, Capgemini, McKinsey, BCG, Bain, DXC, etc.)
 - Include a MIX of categories:
   * Big Tech / FAANG (5-10)
-  * Enterprise software (10-15)
-  * Cloud / SaaS (10-15)
-  * IT consulting & services (10-15)
-  * Fintech (5-10)
+  * Enterprise software (15-20)
+  * Cloud / SaaS (15-20)
+  * Fintech (8-12)
   * Gaming / entertainment tech (5-8)
   * Semiconductor / hardware (5-10)
-  * Cybersecurity (3-5)
-  * AI / ML companies (5-8)
+  * Cybersecurity (5-8)
+  * AI / ML companies (8-12)
+  * E-commerce / marketplace tech (5-8)
   * E-commerce tech (3-5)
   * High-profile startups & unicorns (10-15)
   * Telecom tech (3-5)
@@ -82,12 +83,13 @@ Search for:
 1. "top tech companies to work for 2025 2026"
 2. "largest software companies by employees"
 3. "most discussed tech employers glassdoor blind reddit"
-4. "top IT consulting companies"
-5. "top fintech companies employers"
-6. "top AI companies to work for"
-7. "top gaming companies employers"
-8. "top cybersecurity companies"
-9. Any other searches needed to fill categories
+4. "top fintech companies employers"
+5. "top AI companies to work for"
+6. "top gaming companies employers"
+7. "top cybersecurity companies"
+8. "top cloud SaaS companies employers"
+9. "top e-commerce technology companies"
+10. Any other searches needed to fill categories
 
 OUTPUT FORMAT — STRICT JSON:
 Output ONLY a JSON array of objects. No markdown, no preamble.
@@ -108,7 +110,7 @@ Output ONLY a JSON array of objects. No markdown, no preamble.
 Rules for fields:
 - "name": Official current company name, clean (no Inc., Corp., etc.)
 - "ticker": Stock ticker if public, or short 2-4 letter abbreviation if private
-- "industry": One of: Big Tech, Enterprise Software, Cloud/SaaS, IT Consulting, Fintech, Gaming, Semiconductor, Cybersecurity, AI/ML, E-commerce, Startup/Unicorn, Telecom, Hardware, Other Tech
+- "industry": One of: Big Tech, Enterprise Software, Cloud/SaaS, Fintech, Gaming, Semiconductor, Cybersecurity, AI/ML, E-commerce, Startup/Unicorn, Telecom, Hardware, Other Tech (never IT Consulting)
 - "logo": First 1-2 letters of the company name (for display)
 - "employeeCount": Approximate with "+" suffix (e.g., "180,000+")
 - "founded": Year as integer

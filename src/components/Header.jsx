@@ -54,7 +54,7 @@ const Header = ({ totalSignals }) => {
                 textTransform: 'uppercase',
               }}
             >
-              EVIL INDEX
+              ANXIETY INDEX
             </h1>
           </div>
           <p
@@ -68,7 +68,7 @@ const Header = ({ totalSignals }) => {
               marginLeft: 20,
             }}
           >
-            Corporate Workplace Intelligence Platform
+            Workplace Stress Intelligence Platform
           </p>
         </div>
 
@@ -82,7 +82,7 @@ const Header = ({ totalSignals }) => {
               marginBottom: 4,
             }}
           >
-            Signals Intercepted
+            Data Points Analyzed
           </div>
           <div
             style={{

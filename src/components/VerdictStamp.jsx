@@ -2,10 +2,10 @@ import React from 'react';
 import { getVerdict, getVerdictColor } from '../data/companies';
 
 const rotations = {
-  TOXIC: -7,
-  HARMFUL: 5,
-  CAUTION: -4,
-  'MOSTLY OK': 3,
+  CRITICAL: -7,
+  HIGH: 5,
+  ELEVATED: -4,
+  LOW: 3,
 };
 
 const VerdictStamp = ({ score, size = 'normal' }) => {

@@ -118,7 +118,7 @@ Rules for fields:
 
 const USER_PROMPT = `Search the web and compile a list of the top ${targetCount} IT/tech companies for the Evil Index workplace analysis platform.
 
-Search at least 8 times to cover all categories (big tech, enterprise, consulting, fintech, gaming, AI, cybersecurity, startups).
+Search at least 8 times to cover all categories (big tech, enterprise software, cloud/SaaS, fintech, gaming, AI, cybersecurity, startups).
 
 After researching, output ONLY the JSON array of company objects. No other text.`;
 

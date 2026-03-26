@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Evil Index — Daily Batch Scoring
+ * Anxiety Index — Daily Batch Scoring
  *
  * Scores a batch of companies that haven't been scored this week.
  * Merges results into the existing results.json.
@@ -30,7 +30,7 @@ const { values: args } = parseArgs({
 
 if (args.help) {
   console.log(`
-Evil Index — Daily Batch Scoring
+Anxiety Index — Daily Batch Scoring
 
 Scores companies not yet scored this week, merging into results.json.
 

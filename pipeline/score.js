@@ -10,7 +10,7 @@ const CRITERIA_WEIGHTS = {
 };
 
 /**
- * Calculate the Evil Index from criterion scores.
+ * Calculate the Anxiety Index from criterion scores.
  */
 function calculateEvilScore(scores) {
   return Math.round(
@@ -89,7 +89,7 @@ export async function scoreCompany({ apiKey, companyName, meta = {}, model = 'cl
 
   const userPrompt = buildUserPrompt(companyName, meta);
 
-  console.log(`[Evil Index] Scoring ${companyName} (with web search)...`);
+  console.log(`[Anxiety Index] Scoring ${companyName} (with web search)...`);
 
   // Retry with backoff for rate limits
   let response;
@@ -113,7 +113,7 @@ export async function scoreCompany({ apiKey, companyName, meta = {}, model = 'cl
       if (err.status === 429 && attempt < 3) {
         const retryAfter = parseInt(err.headers?.['retry-after'] || '60', 10);
         const waitSecs = Math.min(retryAfter, 120);
-        console.log(`[Evil Index] Rate limited. Waiting ${waitSecs}s before retry ${attempt + 1}/3...`);
+        console.log(`[Anxiety Index] Rate limited. Waiting ${waitSecs}s before retry ${attempt + 1}/3...`);
         await new Promise((r) => setTimeout(r, waitSecs * 1000));
       } else {
         throw err;
@@ -123,10 +123,10 @@ export async function scoreCompany({ apiKey, companyName, meta = {}, model = 'cl
 
   const searchCount = countSearches(response);
   const queries = extractSearchQueries(response);
-  console.log(`[Evil Index] ${companyName}: ${searchCount} web searches performed`);
+  console.log(`[Anxiety Index] ${companyName}: ${searchCount} web searches performed`);
   if (queries.length > 0) {
     for (const q of queries) {
-      console.log(`[Evil Index]   -> "${q}"`);
+      console.log(`[Anxiety Index]   -> "${q}"`);
     }
   }
 
@@ -158,7 +158,7 @@ export async function scoreCompany({ apiKey, companyName, meta = {}, model = 'cl
   try {
     result = JSON.parse(jsonStr);
   } catch (err) {
-    console.error('[Evil Index] Failed to parse LLM response as JSON:');
+    console.error('[Anxiety Index] Failed to parse LLM response as JSON:');
     console.error(jsonStr.slice(0, 500));
     throw new Error(`LLM returned invalid JSON: ${err.message}`);
   }
@@ -213,7 +213,7 @@ export async function scoreCompany({ apiKey, companyName, meta = {}, model = 'cl
     _tokensUsed: response.usage,
   };
 
-  console.log(`[Evil Index] ${companyName}: Evil Score = ${evilScore} (${verdict}), confidence = ${overallConfidence}`);
+  console.log(`[Anxiety Index] ${companyName}: Anxiety Score = ${evilScore} (${verdict}), confidence = ${overallConfidence}`);
 
   return scored;
 }
@@ -259,7 +259,7 @@ export async function scoreCompanies({ apiKey, companies, model, maxSearches }) 
       });
       results.push(result);
     } catch (err) {
-      console.error(`[Evil Index] Failed to score ${company.name}:`, err.message);
+      console.error(`[Anxiety Index] Failed to score ${company.name}:`, err.message);
       results.push({
         name: company.name,
         error: err.message,
@@ -269,7 +269,7 @@ export async function scoreCompanies({ apiKey, companies, model, maxSearches }) 
 
     // Delay between companies to avoid rate limits (web search is heavier)
     if (i < companies.length - 1) {
-      console.log('[Evil Index] Waiting 3s before next company...');
+      console.log('[Anxiety Index] Waiting 3s before next company...');
       await new Promise((r) => setTimeout(r, 3000));
     }
   }

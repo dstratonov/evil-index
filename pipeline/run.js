@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Evil Index — Scoring Pipeline CLI
+ * Anxiety Index — Scoring Pipeline CLI
  *
  * Usage:
  *   node run.js --company "Google"
@@ -29,7 +29,7 @@ const { values: args } = parseArgs({
 
 if (args.help) {
   console.log(`
-Evil Index — Scoring Pipeline (with Web Search)
+Anxiety Index — Scoring Pipeline (with Web Search)
 
 Usage:
   node run.js --company "Google"                  Score a single company

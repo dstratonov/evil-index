@@ -1,15 +1,15 @@
 /**
- * Evil Index — LLM Scoring Prompts
+ * Anxiety Index — LLM Scoring Prompts
  *
  * These prompts instruct Claude to analyze gathered public data about a company
  * and produce structured scores across 5 criteria.
  *
  * Scoring formula:
- *   Evil Index = stability×0.20 + compensation×0.20 + hiringProcess×0.10
+ *   Anxiety Index = stability×0.20 + compensation×0.20 + hiringProcess×0.10
  *              + workAtmosphere×0.30 + careerGrowth×0.20
  */
 
-export const SYSTEM_PROMPT = `You are an expert workplace intelligence analyst for the Evil Index platform. Your job is to research and analyze publicly available data about IT companies and produce objective, evidence-based scores that reflect how good or bad it is to work at each company.
+export const SYSTEM_PROMPT = `You are an expert workplace intelligence analyst for the Anxiety Index platform. Your job is to research and analyze publicly available data about IT companies and produce objective, evidence-based scores that reflect how good or bad it is to work at each company.
 
 You have access to the web_search tool. You MUST use it to gather current, real data before scoring. Do NOT rely on memory or training data alone — search for live information.
 
@@ -230,8 +230,8 @@ Overall confidence:
 - "low": <15 data points or single source
 
 Trending:
-- "up" = getting WORSE (evil score increasing)
-- "down" = getting BETTER (evil score decreasing)
+- "up" = getting WORSE (anxiety score increasing)
+- "down" = getting BETTER (anxiety score decreasing)
 - "stable" = no significant change`;
 
 
@@ -244,7 +244,7 @@ Trending:
  * @returns {string} — Formatted user prompt
  */
 export function buildUserPrompt(companyName, meta = {}) {
-  let prompt = `Research and score the following IT company for the Evil Index.\n\n`;
+  let prompt = `Research and score the following IT company for the Anxiety Index.\n\n`;
   prompt += `══════════════════════════════\n`;
   prompt += `COMPANY: ${companyName}\n`;
 

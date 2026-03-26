@@ -49,7 +49,7 @@ const Header = ({ totalSignals }) => {
                 fontWeight: 900,
                 fontFamily: "'Orbitron', sans-serif",
                 color: '#ff1744',
-                letterSpacing: '4px',
+                letterSpacing: '3px',
                 textShadow: '0 0 20px rgba(255,23,68,0.3)',
                 textTransform: 'uppercase',
               }}
@@ -59,8 +59,8 @@ const Header = ({ totalSignals }) => {
           </div>
           <p
             style={{
-              fontSize: 11,
-              color: 'rgba(255,255,255,0.25)',
+              fontSize: 12,
+              color: 'rgba(255,255,255,0.35)',
               fontFamily: "'JetBrains Mono', monospace",
               letterSpacing: '2px',
               textTransform: 'uppercase',
@@ -75,9 +75,9 @@ const Header = ({ totalSignals }) => {
         <div style={{ textAlign: 'right', fontFamily: "'JetBrains Mono', monospace" }}>
           <div
             style={{
-              fontSize: 9,
+              fontSize: 10,
               letterSpacing: '2px',
-              color: 'rgba(255,255,255,0.25)',
+              color: 'rgba(255,255,255,0.35)',
               textTransform: 'uppercase',
               marginBottom: 4,
             }}

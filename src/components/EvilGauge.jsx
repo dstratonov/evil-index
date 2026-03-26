@@ -128,8 +128,8 @@ const EvilGauge = ({ score, size = 160 }) => {
         </div>
         <div
           style={{
-            fontSize: Math.max(size * 0.065, 8),
-            color: 'rgba(255,255,255,0.25)',
+            fontSize: Math.max(size * 0.07, 10),
+            color: 'rgba(255,255,255,0.35)',
             fontFamily: "'JetBrains Mono', monospace",
             letterSpacing: '2px',
             textTransform: 'uppercase',

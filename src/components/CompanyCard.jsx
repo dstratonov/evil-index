@@ -15,17 +15,17 @@ const BreakdownBar = ({ label, value, weight, confidence, delay, visible }) => {
           justifyContent: 'space-between',
           alignItems: 'center',
           marginBottom: 3,
-          fontSize: 10,
+          fontSize: 11,
           fontFamily: "'JetBrains Mono', monospace",
         }}
       >
         <span style={{ color: 'rgba(255,255,255,0.45)' }}>
           {label}{' '}
-          <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: 8 }}>
+          <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 10 }}>
             {Math.round(weight * 100)}%w
           </span>
           {confidence && (
-            <span style={{ color: confColor, fontSize: 7, marginLeft: 4, opacity: 0.6 }}>
+            <span style={{ color: confColor, fontSize: 8, marginLeft: 4, opacity: 0.6 }}>
               {'\u25CF'}
             </span>
           )}
@@ -65,13 +65,13 @@ const SourceBadge = ({ name, weight }) => (
       background: 'rgba(255,255,255,0.03)',
       border: '1px solid rgba(255,255,255,0.06)',
       borderRadius: 3,
-      fontSize: 9,
+      fontSize: 10,
       fontFamily: "'JetBrains Mono', monospace",
       color: 'rgba(255,255,255,0.4)',
     }}
   >
     <span style={{ textTransform: 'capitalize' }}>{name}</span>
-    <span style={{ color: 'rgba(255,255,255,0.25)' }}>{Math.round(weight * 100)}%</span>
+    <span style={{ color: 'rgba(255,255,255,0.35)' }}>{Math.round(weight * 100)}%</span>
   </div>
 );
 
@@ -93,7 +93,7 @@ const Tag = ({ label }) => {
       style={{
         display: 'inline-block',
         padding: '2px 6px',
-        fontSize: 9,
+        fontSize: 10,
         fontFamily: "'JetBrains Mono', monospace",
         color: `${color}bb`,
         background: `${color}0a`,
@@ -121,7 +121,7 @@ const TrendIndicator = ({ trend }) => {
         display: 'inline-flex',
         alignItems: 'center',
         gap: 4,
-        fontSize: 9,
+        fontSize: 10,
         fontFamily: "'JetBrains Mono', monospace",
         color: c.color,
         letterSpacing: '1px',
@@ -148,7 +148,7 @@ const ConfidenceBadge = ({ level }) => {
         display: 'inline-flex',
         alignItems: 'center',
         gap: 4,
-        fontSize: 8,
+        fontSize: 10,
         fontFamily: "'JetBrains Mono', monospace",
         color: c.color,
         letterSpacing: '1px',
@@ -277,8 +277,8 @@ const CompanyCard = ({ company, index }) => {
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 2 }}>
                     <span
                       style={{
-                        fontSize: 9,
-                        color: 'rgba(255,255,255,0.25)',
+                        fontSize: 10,
+                        color: 'rgba(255,255,255,0.35)',
                         fontFamily: "'JetBrains Mono', monospace",
                         letterSpacing: '1px',
                       }}
@@ -292,8 +292,8 @@ const CompanyCard = ({ company, index }) => {
               </div>
               <div
                 style={{
-                  fontSize: 10,
-                  color: 'rgba(255,255,255,0.35)',
+                  fontSize: 11,
+                  color: 'rgba(255,255,255,0.45)',
                   fontFamily: "'JetBrains Mono', monospace",
                   marginTop: 6,
                   lineHeight: 1.6,
@@ -314,7 +314,7 @@ const CompanyCard = ({ company, index }) => {
               <Tag key={tag} label={tag} />
             ))}
             {!expanded && company.tags.length > 3 && (
-              <span style={{ fontSize: 9, color: 'rgba(255,255,255,0.2)', padding: '2px 4px' }}>
+              <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', padding: '2px 4px' }}>
                 +{company.tags.length - 3}
               </span>
             )}
@@ -337,9 +337,9 @@ const CompanyCard = ({ company, index }) => {
         <div style={{ marginBottom: 20 }}>
           <div
             style={{
-              fontSize: 9,
-              letterSpacing: '3px',
-              color: 'rgba(255,255,255,0.2)',
+              fontSize: 11,
+              letterSpacing: '2px',
+              color: 'rgba(255,255,255,0.35)',
               textTransform: 'uppercase',
               marginBottom: 12,
               fontFamily: "'JetBrains Mono', monospace",
@@ -359,9 +359,9 @@ const CompanyCard = ({ company, index }) => {
           <div style={{ marginBottom: 20 }}>
             <div
               style={{
-                fontSize: 9,
-                letterSpacing: '3px',
-                color: 'rgba(255,255,255,0.2)',
+                fontSize: 11,
+                letterSpacing: '2px',
+                color: 'rgba(255,255,255,0.35)',
                 textTransform: 'uppercase',
                 marginBottom: 12,
                 fontFamily: "'JetBrains Mono', monospace",
@@ -392,15 +392,15 @@ const CompanyCard = ({ company, index }) => {
                         <span style={{ color, fontSize: 9, opacity: 0.7 }}>{score}/100</span>
                       )}
                       {conf && (
-                        <span style={{ color: confColor, fontSize: 8, opacity: 0.5, letterSpacing: '1px' }}>
+                        <span style={{ color: confColor, fontSize: 10, opacity: 0.7, letterSpacing: '1px' }}>
                           {conf.toUpperCase()}
                         </span>
                       )}
                     </div>
                     <p style={{
-                      fontSize: 10,
+                      fontSize: 11,
                       lineHeight: 1.7,
-                      color: 'rgba(255,255,255,0.4)',
+                      color: 'rgba(255,255,255,0.55)',
                       fontFamily: "'JetBrains Mono', monospace",
                       margin: 0,
                     }}>
@@ -417,9 +417,9 @@ const CompanyCard = ({ company, index }) => {
         <div style={{ marginBottom: 16 }}>
           <div
             style={{
-              fontSize: 9,
-              letterSpacing: '3px',
-              color: 'rgba(255,255,255,0.2)',
+              fontSize: 11,
+              letterSpacing: '2px',
+              color: 'rgba(255,255,255,0.35)',
               textTransform: 'uppercase',
               marginBottom: 8,
               fontFamily: "'JetBrains Mono', monospace",
@@ -441,9 +441,9 @@ const CompanyCard = ({ company, index }) => {
           </p>
           {company.trendingReason && (
             <p style={{
-              fontSize: 10,
+              fontSize: 11,
               lineHeight: 1.6,
-              color: 'rgba(255,255,255,0.3)',
+              color: 'rgba(255,255,255,0.45)',
               fontFamily: "'JetBrains Mono', monospace",
               marginTop: 8,
               fontStyle: 'italic',
@@ -470,8 +470,8 @@ const CompanyCard = ({ company, index }) => {
           </div>
           <div
             style={{
-              fontSize: 9,
-              color: 'rgba(255,255,255,0.2)',
+              fontSize: 10,
+              color: 'rgba(255,255,255,0.35)',
               fontFamily: "'JetBrains Mono', monospace",
               textAlign: 'right',
             }}
@@ -486,8 +486,8 @@ const CompanyCard = ({ company, index }) => {
         style={{
           textAlign: 'center',
           marginTop: 10,
-          fontSize: 9,
-          color: 'rgba(255,255,255,0.15)',
+          fontSize: 10,
+          color: 'rgba(255,255,255,0.3)',
           fontFamily: "'JetBrains Mono', monospace",
           letterSpacing: '1px',
           transition: 'color 0.2s ease',

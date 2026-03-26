@@ -72,16 +72,16 @@ const App = () => {
               justifyContent: 'space-between',
               alignItems: 'center',
               marginBottom: 16,
-              fontSize: 10,
+              fontSize: 11,
               fontFamily: "'JetBrains Mono', monospace",
-              color: 'rgba(255,255,255,0.2)',
+              color: 'rgba(255,255,255,0.3)',
               letterSpacing: '1px',
             }}
           >
             <span>
               {filteredCompanies.length} REPORT{filteredCompanies.length !== 1 ? 'S' : ''} FOUND
             </span>
-            <span style={{ fontSize: 9 }}>ALL DATA FROM PUBLIC SOURCES</span>
+            <span style={{ fontSize: 10 }}>ALL DATA FROM PUBLIC SOURCES</span>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -111,8 +111,8 @@ const App = () => {
             padding: '20px 32px',
             borderTop: '1px solid rgba(255,255,255,0.04)',
             textAlign: 'center',
-            fontSize: 9,
-            color: 'rgba(255,255,255,0.12)',
+            fontSize: 10,
+            color: 'rgba(255,255,255,0.25)',
             fontFamily: "'JetBrains Mono', monospace",
             letterSpacing: '1px',
             lineHeight: 1.8,

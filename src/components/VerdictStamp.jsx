@@ -28,7 +28,7 @@ const VerdictStamp = ({ score, size = 'normal' }) => {
         fontFamily: "'Orbitron', 'JetBrains Mono', monospace",
         fontWeight: 800,
         fontSize,
-        letterSpacing: '3px',
+        letterSpacing: '2px',
         textTransform: 'uppercase',
         transform: `rotate(${rotations[verdict]}deg)`,
         textShadow: `0 0 10px ${color}`,

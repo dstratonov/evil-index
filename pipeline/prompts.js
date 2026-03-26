@@ -146,7 +146,12 @@ SCORING RULES — READ CAREFULLY
 
 1. ABSOLUTE SCALE — Score on an absolute "how bad is it to work here" scale, NOT relative to industry norms. 100-hour weeks in banking are just as bad as 100-hour weeks in gaming. You may note industry context in justification but do not curve scores.
 
-2. RECENCY WEIGHTING — Data from the last 12 months carries ~2x the weight of older data. A company that laid off 30% two years ago but has been stable and growing since should score better than one that did it last month. Always note the timeframe.
+2. TIME WINDOW — Only use data from the last 2 years. Ignore anything older unless it describes an ongoing, recurring pattern (e.g., annual layoff cycles, persistent culture issues). Within the 2-year window, apply recency weighting:
+   - Last 6 months: FULL weight (most relevant)
+   - 6–12 months ago: 75% weight
+   - 1–2 years ago: 50% weight
+   - Older than 2 years: IGNORE completely (unless recurring pattern — note this explicitly)
+   A company that had problems 3 years ago but has been clean since should NOT be penalized. Always note timeframes in justifications.
 
 3. EVIDENCE OVER SENTIMENT — A confirmed news report about a discrimination lawsuit is stronger evidence than an anonymous Reddit rant. Weight your scoring accordingly:
    - Tier 1 (strongest): News articles from reputable outlets, legal filings, SEC filings, official company statements
@@ -256,8 +261,10 @@ export function buildUserPrompt(companyName, meta = {}) {
   prompt += `ANALYSIS DATE: ${new Date().toISOString().split('T')[0]}\n`;
   prompt += `══════════════════════════════\n\n`;
 
-  prompt += `Use web_search to research this company thoroughly. You MUST search for:\n`;
-  prompt += `1. Recent layoffs, restructuring, financial stability\n`;
+  const curYear = new Date().getFullYear();
+  const prevYear = curYear - 1;
+  prompt += `Use web_search to research this company thoroughly. Focus on data from ${prevYear}–${curYear} only. You MUST search for:\n`;
+  prompt += `1. Recent layoffs, restructuring, financial stability (${prevYear}-${curYear})\n`;
   prompt += `2. Employee salary/compensation reviews and benefits\n`;
   prompt += `3. Interview and hiring process experiences\n`;
   prompt += `4. Work culture, work-life balance, management quality\n`;

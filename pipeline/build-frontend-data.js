@@ -85,10 +85,10 @@ export const calculateEvilScore = (breakdown) => {
 };
 
 export const getVerdict = (score) => {
-  if (score >= 80) return 'TOXIC';
-  if (score >= 60) return 'HARMFUL';
-  if (score >= 40) return 'CAUTION';
-  return 'MOSTLY OK';
+  if (score >= 80) return 'CRITICAL';
+  if (score >= 60) return 'HIGH';
+  if (score >= 40) return 'ELEVATED';
+  return 'LOW';
 };
 
 export const getVerdictColor = (score) => {
@@ -117,10 +117,10 @@ export const companies = ${JSON.stringify(companies, null, 2)};
 }
 
 function getVerdict(score) {
-  if (score >= 80) return 'TOXIC';
-  if (score >= 60) return 'HARMFUL';
-  if (score >= 40) return 'CAUTION';
-  return 'MOSTLY OK';
+  if (score >= 80) return 'CRITICAL';
+  if (score >= 60) return 'HIGH';
+  if (score >= 40) return 'ELEVATED';
+  return 'LOW';
 }
 
 main().catch((err) => {

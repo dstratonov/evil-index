@@ -7824,5 +7824,177 @@
         "web_fetch_requests": 0
       }
     }
+  },
+  {
+    "name": "TSMC",
+    "industry": "Semiconductor",
+    "evilScore": 48,
+    "verdict": "CAUTION",
+    "confidence": "high",
+    "breakdown": {
+      "stability": 15,
+      "compensation": 35,
+      "hiringProcess": 45,
+      "workAtmosphere": 75,
+      "careerGrowth": 55
+    },
+    "justifications": {
+      "stability": "Multiple Glassdoor reviews consistently highlight TSMC's exceptional job security with \"no worries about layoffs\" and \"rare occurrence of employee layoffs\". TSMC reported record Q4 2025 revenue of NT$1.046 trillion and full-year 2025 revenue of NT$3.809 trillion, representing 31.6% year-over-year growth, with net income hitting a record NT$1.7178 trillion. The company expects 30% revenue growth in 2026 and increased capex to USD 52-56 billion, up 30% from 2025, reflecting strong business confidence.",
+      "compensation": "TSMC employees rate compensation and benefits 3.8-3.9 out of 5 on Glassdoor, with ratings improving 2-4% over the last 12 months. Salary ranges from $59,413 for Manufacturing Technician to $232,478 for Director, with IT averaging $110,256. Reviews indicate \"good pay and stable\" compensation, though some mention being \"below average compared to top tier companies in Bay Area\".",
+      "hiringProcess": "Recent candidates report interview processes taking 4 months with five interview rounds, two assessments, and reference checks. Indeed surveys indicate medium difficulty interviews, with average of 2 interviews and response within a week. The process includes resume screening, phone/video interviews with department heads, and on-site rounds focusing on technical depth and semiconductor industry knowledge.",
+      "workAtmosphere": "Employee ratings show poor work-life balance (2.3/5), culture and values (2.7/5), with only 48% recommending the company to friends. Recent 2025-2026 reviews describe \"very stressful and toxic Asian-centric work culture\" with expectations to work 16+ hours and public embarrassment in meetings. Multiple reviews describe \"toxic and unhealthy\" company culture with \"lack of trust and collaboration\" and \"cutthroat environment where teamwork and support were rare\".",
+      "careerGrowth": "Employees rate career opportunities 3.5 out of 5, which is moderate but not exceptional. A 2026 review from an 11-year veteran noted \"there isn't much room to grow unless you're a favorite\" and \"a lot of sucking up to get a good raise because work ethic isn't enough\". Company materials promise \"wide range of career growth opportunities\" with training, mentorship, and advancement to senior engineer or management positions. Some reviews note that \"promotion does not come easily\"."
+    },
+    "criterionConfidence": {
+      "stability": "high",
+      "compensation": "medium",
+      "hiringProcess": "medium",
+      "workAtmosphere": "high",
+      "careerGrowth": "medium"
+    },
+    "intelSummary": "TSMC presents a stark dichotomy between exceptional financial stability and deeply problematic workplace culture. The company's record-breaking 2025 performance and 30% projected 2026 growth provide unmatched job security with virtually no layoffs. However, employee experiences reveal a toxic work environment characterized by extreme hours (16+ per day), public humiliation, and cultural conflicts between Taiwanese management and American workers. Compensation is decent but below Silicon Valley standards, while career advancement appears highly political.",
+    "tags": [
+      "toxic-culture",
+      "extreme-hours",
+      "cultural-conflicts",
+      "public-humiliation",
+      "political-advancement",
+      "work-life-imbalance",
+      "management-abuse"
+    ],
+    "trending": "stable",
+    "trendingReason": "Recent 2025-2026 reviews continue to report the same cultural and work-life balance issues that have been consistent over time, with no signs of improvement despite strong financial performance.",
+    "sources": {
+      "news": 1
+    },
+    "signals": 87,
+    "dataQuality": {
+      "totalDataPoints": 87,
+      "sourcesRepresented": [
+        "Glassdoor",
+        "Indeed",
+        "Tom's Hardware",
+        "Rest of World",
+        "TSMC investor reports",
+        "PayScale",
+        "Comparably",
+        "InterviewQuery"
+      ],
+      "oldestDataPoint": "2024-04",
+      "newestDataPoint": "2026-03",
+      "gaps": "Limited data on specific promotion timelines and internal mobility processes"
+    },
+    "lastUpdated": "2026-03-30",
+    "_searchQueries": [
+      "TSMC layoffs 2025 2026 restructuring",
+      "TSMC salary compensation benefits 2025 2026 employee reviews",
+      "TSMC interview process hiring experience 2025 2026",
+      "TSMC work culture toxic management 2025 2026",
+      "TSMC career growth promotion opportunities engineering culture 2025 2026",
+      "TSMC financial performance revenue 2025 2026 stability"
+    ],
+    "_searchCount": 6,
+    "_model": "claude-sonnet-4-20250514",
+    "_tokensUsed": {
+      "input_tokens": 232248,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1943,
+      "service_tier": "standard",
+      "inference_geo": "not_available",
+      "server_tool_use": {
+        "web_search_requests": 6,
+        "web_fetch_requests": 0
+      }
+    }
+  },
+  {
+    "name": "VMware",
+    "industry": "Enterprise Software",
+    "evilScore": 60,
+    "verdict": "HARMFUL",
+    "confidence": "high",
+    "breakdown": {
+      "stability": 75,
+      "compensation": 35,
+      "hiringProcess": 45,
+      "workAtmosphere": 65,
+      "careerGrowth": 70
+    },
+    "justifications": {
+      "stability": "VMware experienced significant layoffs immediately after Broadcom's $69 billion acquisition closed in late 2023, with \"large number\" of cuts in early 2026 and continuous layoffs throughout 2025. Employee reviews consistently report \"layoffs every quarter\" with ongoing restructuring and \"constant layoffs\" creating pervasive job insecurity. Thousands of VMware employees have been laid off since the acquisition, representing a significant percentage of the 38,000+ workforce.",
+      "compensation": "Salary data shows VMware pays competitively with senior software engineers averaging $194K base plus $66K additional pay, and total compensation ranging from $147K-$337K across levels. Multiple reviews highlight \"good RSU structure and pay\" with substantial stock compensation that has appreciated under Broadcom ownership. However, employees report that \"benefits not as good as VMware\" post-acquisition, with reduced perks and benefits compared to the pre-Broadcom era.",
+      "hiringProcess": "Glassdoor data shows VMware has a 60.9% positive interview experience rating with 3.03/5 difficulty and average 27-day hiring process. Recent interview experiences describe \"5 rounds across different roles\" taking \"3 to 4 weeks\" with \"very organized\" process. Candidates report \"very easy and straight forward\" technical interviews with \"recruiters very easy to work with,\" though the final stage can include 5-6 interviews spanning multiple days.",
+      "workAtmosphere": "Employee reviews show a dramatic culture shift post-acquisition, with ratings dropping and employees stating \"after broadcom acquired VMware the mentality shifted completely\" from \"customer-friendly company\" to \"focus solely on profit\". Broadcom CEO mandated strict return-to-office policy requiring all employees within 50 miles to \"get your butt in here\" full-time, eliminating VMware's remote-friendly culture. Multiple recent reviews report \"new management doesn't care about innovation,\" \"horrible middle management,\" and \"Broadcom ruined everything\" with demoralized workforce. However, some employees still report good work-life balance and note that remaining staff are \"top talents\" with less stressful work environment.",
+      "careerGrowth": "Employee reviews consistently report \"career growth is slow\" with \"no movement around or up through the company\" and career progression varying \"significantly between teams\". Multiple reviews mention management lacks focus on innovation and development, with work becoming \"monotonous\" and limited learning opportunities after the acquisition. Recent Blind reviews show deteriorating culture with employees stating \"literally everything else\" is problematic and \"this company hates its customers and partners\". However, VMware certifications remain valuable in the market, offering paths to \"cloud engineering, virtualization design, network virtualization, Kubernetes management, and security\" roles."
+    },
+    "criterionConfidence": {
+      "stability": "high",
+      "compensation": "high",
+      "hiringProcess": "medium",
+      "workAtmosphere": "high",
+      "careerGrowth": "medium"
+    },
+    "intelSummary": "VMware presents significant employment risks following Broadcom's 2023 acquisition. The company has experienced continuous quarterly layoffs affecting thousands of employees, creating severe job insecurity. While compensation remains strong with competitive salaries and valuable RSU packages, the work atmosphere has deteriorated dramatically with mandatory return-to-office policies, cultural destruction, and management focused solely on profit extraction rather than employee development. Career growth has stagnated with limited advancement opportunities and reduced innovation focus.",
+    "tags": [
+      "quarterly-layoffs",
+      "acquisition-disruption",
+      "mandatory-rto",
+      "culture-destruction",
+      "job-insecurity",
+      "innovation-decline"
+    ],
+    "trending": "up",
+    "trendingReason": "Continuous layoffs throughout 2025-2026, deteriorating culture post-acquisition, and mandatory RTO policies are increasing employee anxiety levels.",
+    "sources": {
+      "news": 0.83,
+      "glassdoor": 0.17
+    },
+    "signals": 95,
+    "dataQuality": {
+      "totalDataPoints": 95,
+      "sourcesRepresented": [
+        "Glassdoor",
+        "Indeed",
+        "Blind",
+        "TheLayoff.com",
+        "Business news outlets",
+        "PayScale"
+      ],
+      "oldestDataPoint": "2023-11",
+      "newestDataPoint": "2026-03",
+      "gaps": "Limited specific data on training budgets and formal mentorship programs"
+    },
+    "lastUpdated": "2026-03-30",
+    "_searchQueries": [
+      "VMware layoffs 2025 2026 restructuring",
+      "VMware Broadcom salary compensation glassdoor 2025",
+      "VMware Broadcom interview process experience 2025 2026",
+      "VMware Broadcom work culture work life balance management 2025 2026",
+      "VMware Broadcom career growth promotion engineering 2025 2026",
+      "VMware Broadcom return to office RTO mandatory policy 2025"
+    ],
+    "_searchCount": 6,
+    "_model": "claude-sonnet-4-20250514",
+    "_tokensUsed": {
+      "input_tokens": 265326,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 2007,
+      "service_tier": "standard",
+      "inference_geo": "not_available",
+      "server_tool_use": {
+        "web_search_requests": 6,
+        "web_fetch_requests": 0
+      }
+    }
   }
 ]

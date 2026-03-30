@@ -1,11 +1,11 @@
 {
-  "Google": {
-    "ticker": "GOOGL",
-    "logo": "G",
+  "Apple": {
+    "ticker": "AAPL",
+    "logo": "A",
     "industry": "Big Tech",
-    "employeeCount": "180,000+",
-    "founded": 1998,
-    "hq": "Mountain View, California"
+    "employeeCount": "161,000+",
+    "founded": 1976,
+    "hq": "Cupertino, CA"
   },
   "Microsoft": {
     "ticker": "MSFT",
@@ -13,39 +13,31 @@
     "industry": "Big Tech",
     "employeeCount": "220,000+",
     "founded": 1975,
-    "hq": "Redmond, Washington"
+    "hq": "Redmond, WA"
   },
-  "Apple": {
-    "ticker": "AAPL",
-    "logo": "A",
+  "Google": {
+    "ticker": "GOOGL",
+    "logo": "G",
     "industry": "Big Tech",
-    "employeeCount": "164,000+",
-    "founded": 1976,
-    "hq": "Cupertino, California"
+    "employeeCount": "180,000+",
+    "founded": 1998,
+    "hq": "Mountain View, CA"
   },
   "Amazon": {
     "ticker": "AMZN",
     "logo": "A",
-    "industry": "Big Tech",
-    "employeeCount": "1,461,000+",
+    "industry": "E-commerce",
+    "employeeCount": "1,500,000+",
     "founded": 1994,
-    "hq": "Seattle, Washington"
+    "hq": "Seattle, WA"
   },
   "Meta": {
     "ticker": "META",
     "logo": "M",
     "industry": "Big Tech",
-    "employeeCount": "67,000+",
+    "employeeCount": "77,000+",
     "founded": 2004,
-    "hq": "Menlo Park, California"
-  },
-  "NVIDIA": {
-    "ticker": "NVDA",
-    "logo": "NV",
-    "industry": "Semiconductor",
-    "employeeCount": "29,600+",
-    "founded": 1993,
-    "hq": "Santa Clara, California"
+    "hq": "Menlo Park, CA"
   },
   "Tesla": {
     "ticker": "TSLA",
@@ -53,87 +45,199 @@
     "industry": "Hardware",
     "employeeCount": "140,000+",
     "founded": 2003,
-    "hq": "Austin, Texas"
+    "hq": "Austin, TX"
   },
-  "Oracle": {
-    "ticker": "ORCL",
-    "logo": "O",
-    "industry": "Enterprise Software",
-    "employeeCount": "143,000+",
-    "founded": 1977,
-    "hq": "Austin, Texas"
+  "NVIDIA": {
+    "ticker": "NVDA",
+    "logo": "N",
+    "industry": "Semiconductor",
+    "employeeCount": "30,000+",
+    "founded": 1993,
+    "hq": "Santa Clara, CA"
   },
   "Salesforce": {
     "ticker": "CRM",
     "logo": "S",
     "industry": "Cloud/SaaS",
-    "employeeCount": "73,000+",
+    "employeeCount": "79,000+",
     "founded": 1999,
-    "hq": "San Francisco, California"
+    "hq": "San Francisco, CA"
   },
   "Adobe": {
     "ticker": "ADBE",
     "logo": "A",
     "industry": "Enterprise Software",
-    "employeeCount": "28,000+",
+    "employeeCount": "26,000+",
     "founded": 1982,
-    "hq": "San Jose, California"
+    "hq": "San Jose, CA"
   },
-  "Netflix": {
-    "ticker": "NFLX",
-    "logo": "N",
-    "industry": "E-commerce",
-    "employeeCount": "12,800+",
-    "founded": 1997,
-    "hq": "Los Gatos, California"
-  },
-  "Shopify": {
-    "ticker": "SHOP",
-    "logo": "S",
-    "industry": "E-commerce",
-    "employeeCount": "11,600+",
-    "founded": 2006,
-    "hq": "Ottawa, Canada"
-  },
-  "IBM": {
-    "ticker": "IBM",
-    "logo": "IBM",
-    "industry": "Enterprise Software",
-    "employeeCount": "270,000+",
-    "founded": 1911,
-    "hq": "Armonk, New York"
-  },
-  "Snowflake": {
-    "ticker": "SNOW",
-    "logo": "S",
-    "industry": "Cloud/SaaS",
-    "employeeCount": "6,800+",
-    "founded": 2012,
-    "hq": "Bozeman, Montana"
-  },
-  "Databricks": {
-    "ticker": "DB",
-    "logo": "D",
-    "industry": "Cloud/SaaS",
-    "employeeCount": "7,000+",
-    "founded": 2013,
-    "hq": "San Francisco, California"
+  "Intel": {
+    "ticker": "INTC",
+    "logo": "I",
+    "industry": "Semiconductor",
+    "employeeCount": "131,000+",
+    "founded": 1968,
+    "hq": "Santa Clara, CA"
   },
   "ServiceNow": {
     "ticker": "NOW",
     "logo": "S",
     "industry": "Enterprise Software",
-    "employeeCount": "22,000+",
-    "founded": 2003,
-    "hq": "Santa Clara, California"
+    "employeeCount": "23,000+",
+    "founded": 2004,
+    "hq": "Santa Clara, CA"
+  },
+  "Oracle": {
+    "ticker": "ORCL",
+    "logo": "O",
+    "industry": "Enterprise Software",
+    "employeeCount": "132,000+",
+    "founded": 1977,
+    "hq": "Austin, TX"
+  },
+  "IBM": {
+    "ticker": "IBM",
+    "logo": "I",
+    "industry": "Enterprise Software",
+    "employeeCount": "282,000+",
+    "founded": 1911,
+    "hq": "Armonk, NY"
+  },
+  "AMD": {
+    "ticker": "AMD",
+    "logo": "A",
+    "industry": "Semiconductor",
+    "employeeCount": "26,000+",
+    "founded": 1969,
+    "hq": "Santa Clara, CA"
+  },
+  "Qualcomm": {
+    "ticker": "QCOM",
+    "logo": "Q",
+    "industry": "Semiconductor",
+    "employeeCount": "50,000+",
+    "founded": 1985,
+    "hq": "San Diego, CA"
+  },
+  "Broadcom": {
+    "ticker": "AVGO",
+    "logo": "B",
+    "industry": "Semiconductor",
+    "employeeCount": "24,000+",
+    "founded": 1991,
+    "hq": "San Jose, CA"
+  },
+  "Micron Technology": {
+    "ticker": "MU",
+    "logo": "M",
+    "industry": "Semiconductor",
+    "employeeCount": "43,000+",
+    "founded": 1978,
+    "hq": "Boise, ID"
+  },
+  "Netflix": {
+    "ticker": "NFLX",
+    "logo": "N",
+    "industry": "Other Tech",
+    "employeeCount": "13,000+",
+    "founded": 1997,
+    "hq": "Los Gatos, CA"
+  },
+  "Uber": {
+    "ticker": "UBER",
+    "logo": "U",
+    "industry": "Other Tech",
+    "employeeCount": "32,000+",
+    "founded": 2009,
+    "hq": "San Francisco, CA"
+  },
+  "PayPal": {
+    "ticker": "PYPL",
+    "logo": "P",
+    "industry": "Fintech",
+    "employeeCount": "30,000+",
+    "founded": 1998,
+    "hq": "San Jose, CA"
+  },
+  "OpenAI": {
+    "ticker": "OAI",
+    "logo": "O",
+    "industry": "AI/ML",
+    "employeeCount": "3,000+",
+    "founded": 2015,
+    "hq": "San Francisco, CA"
+  },
+  "Stripe": {
+    "ticker": "STRP",
+    "logo": "S",
+    "industry": "Fintech",
+    "employeeCount": "4,500+",
+    "founded": 2010,
+    "hq": "San Francisco, CA"
+  },
+  "SpaceX": {
+    "ticker": "SPCX",
+    "logo": "S",
+    "industry": "Startup/Unicorn",
+    "employeeCount": "13,000+",
+    "founded": 2002,
+    "hq": "Hawthorne, CA"
+  },
+  "Databricks": {
+    "ticker": "DBRX",
+    "logo": "D",
+    "industry": "AI/ML",
+    "employeeCount": "7,000+",
+    "founded": 2013,
+    "hq": "San Francisco, CA"
+  },
+  "Anthropic": {
+    "ticker": "ANTH",
+    "logo": "A",
+    "industry": "AI/ML",
+    "employeeCount": "1,500+",
+    "founded": 2021,
+    "hq": "San Francisco, CA"
   },
   "Palantir": {
     "ticker": "PLTR",
     "logo": "P",
-    "industry": "Big Tech",
+    "industry": "AI/ML",
     "employeeCount": "4,500+",
     "founded": 2003,
-    "hq": "Denver, Colorado"
+    "hq": "Denver, CO"
+  },
+  "Shopify": {
+    "ticker": "SHOP",
+    "logo": "S",
+    "industry": "E-commerce",
+    "employeeCount": "12,000+",
+    "founded": 2006,
+    "hq": "Ottawa, Canada"
+  },
+  "TSMC": {
+    "ticker": "TSM",
+    "logo": "T",
+    "industry": "Semiconductor",
+    "employeeCount": "75,000+",
+    "founded": 1987,
+    "hq": "Hsinchu, Taiwan"
+  },
+  "ASML": {
+    "ticker": "ASML",
+    "logo": "A",
+    "industry": "Semiconductor",
+    "employeeCount": "42,000+",
+    "founded": 1984,
+    "hq": "Veldhoven, Netherlands"
+  },
+  "SAP": {
+    "ticker": "SAP",
+    "logo": "S",
+    "industry": "Enterprise Software",
+    "employeeCount": "108,000+",
+    "founded": 1972,
+    "hq": "Walldorf, Germany"
   },
   "Atlassian": {
     "ticker": "TEAM",
@@ -143,357 +247,29 @@
     "founded": 2002,
     "hq": "Sydney, Australia"
   },
-  "Workday": {
-    "ticker": "WDAY",
-    "logo": "W",
+  "VMware": {
+    "ticker": "VMW",
+    "logo": "V",
     "industry": "Enterprise Software",
-    "employeeCount": "18,000+",
-    "founded": 2005,
-    "hq": "Pleasanton, California"
-  },
-  "Intuit": {
-    "ticker": "INTU",
-    "logo": "I",
-    "industry": "Enterprise Software",
-    "employeeCount": "17,300+",
-    "founded": 1983,
-    "hq": "Mountain View, California"
-  },
-  "SAP": {
-    "ticker": "SAP",
-    "logo": "SAP",
-    "industry": "Enterprise Software",
-    "employeeCount": "112,000+",
-    "founded": 1972,
-    "hq": "Walldorf, Germany"
-  },
-  "Uber": {
-    "ticker": "UBER",
-    "logo": "U",
-    "industry": "E-commerce",
-    "employeeCount": "32,800+",
-    "founded": 2009,
-    "hq": "San Francisco, California"
-  },
-  "Block": {
-    "ticker": "SQ",
-    "logo": "B",
-    "industry": "Fintech",
-    "employeeCount": "13,500+",
-    "founded": 2009,
-    "hq": "San Francisco, California"
-  },
-  "PayPal": {
-    "ticker": "PYPL",
-    "logo": "P",
-    "industry": "Fintech",
-    "employeeCount": "30,900+",
+    "employeeCount": "37,000+",
     "founded": 1998,
-    "hq": "San Jose, California"
+    "hq": "Palo Alto, CA"
   },
-  "Mastercard": {
-    "ticker": "MA",
-    "logo": "M",
-    "industry": "Fintech",
-    "employeeCount": "33,400+",
-    "founded": 1966,
-    "hq": "Purchase, New York"
-  },
-  "Visa": {
-    "ticker": "V",
-    "logo": "V",
-    "industry": "Fintech",
-    "employeeCount": "26,500+",
-    "founded": 1958,
-    "hq": "San Francisco, California"
-  },
-  "Stripe": {
-    "ticker": "STRP",
+  "Snowflake": {
+    "ticker": "SNOW",
     "logo": "S",
-    "industry": "Fintech",
-    "employeeCount": "8,000+",
-    "founded": 2010,
-    "hq": "San Francisco, California"
-  },
-  "Coinbase": {
-    "ticker": "COIN",
-    "logo": "C",
-    "industry": "Fintech",
-    "employeeCount": "5,200+",
-    "founded": 2012,
-    "hq": "San Francisco, California"
-  },
-  "Robinhood": {
-    "ticker": "HOOD",
-    "logo": "R",
-    "industry": "Fintech",
-    "employeeCount": "3,800+",
-    "founded": 2013,
-    "hq": "Menlo Park, California"
-  },
-  "Affirm": {
-    "ticker": "AFRM",
-    "logo": "A",
-    "industry": "Fintech",
-    "employeeCount": "2,700+",
-    "founded": 2012,
-    "hq": "San Francisco, California"
-  },
-  "SoFi": {
-    "ticker": "SOFI",
-    "logo": "S",
-    "industry": "Fintech",
-    "employeeCount": "5,900+",
-    "founded": 2011,
-    "hq": "San Francisco, California"
-  },
-  "Electronic Arts": {
-    "ticker": "EA",
-    "logo": "EA",
-    "industry": "Gaming",
-    "employeeCount": "13,000+",
-    "founded": 1982,
-    "hq": "Redwood City, California"
-  },
-  "Activision Blizzard": {
-    "ticker": "ATVI",
-    "logo": "AB",
-    "industry": "Gaming",
-    "employeeCount": "17,000+",
-    "founded": 1979,
-    "hq": "Santa Monica, California"
-  },
-  "Take-Two Interactive": {
-    "ticker": "TTWO",
-    "logo": "T2",
-    "industry": "Gaming",
-    "employeeCount": "11,580+",
-    "founded": 1993,
-    "hq": "New York, New York"
-  },
-  "Unity": {
-    "ticker": "U",
-    "logo": "U",
-    "industry": "Gaming",
+    "industry": "Cloud/SaaS",
     "employeeCount": "7,000+",
-    "founded": 2004,
-    "hq": "San Francisco, California"
-  },
-  "Epic Games": {
-    "ticker": "EPIC",
-    "logo": "EG",
-    "industry": "Gaming",
-    "employeeCount": "4,500+",
-    "founded": 1991,
-    "hq": "Cary, North Carolina"
-  },
-  "Riot Games": {
-    "ticker": "RIOT",
-    "logo": "RG",
-    "industry": "Gaming",
-    "employeeCount": "4,500+",
-    "founded": 2006,
-    "hq": "Los Angeles, California"
-  },
-  "Valve": {
-    "ticker": "VAL",
-    "logo": "V",
-    "industry": "Gaming",
-    "employeeCount": "1,000+",
-    "founded": 1996,
-    "hq": "Bellevue, Washington"
-  },
-  "Ubisoft": {
-    "ticker": "UBI",
-    "logo": "U",
-    "industry": "Gaming",
-    "employeeCount": "20,000+",
-    "founded": 1986,
-    "hq": "Montreuil, France"
-  },
-  "Intel": {
-    "ticker": "INTC",
-    "logo": "I",
-    "industry": "Semiconductor",
-    "employeeCount": "124,800+",
-    "founded": 1968,
-    "hq": "Santa Clara, California"
-  },
-  "AMD": {
-    "ticker": "AMD",
-    "logo": "AMD",
-    "industry": "Semiconductor",
-    "employeeCount": "26,000+",
-    "founded": 1969,
-    "hq": "Santa Clara, California"
-  },
-  "Qualcomm": {
-    "ticker": "QCOM",
-    "logo": "Q",
-    "industry": "Semiconductor",
-    "employeeCount": "51,000+",
-    "founded": 1985,
-    "hq": "San Diego, California"
-  },
-  "Broadcom": {
-    "ticker": "AVGO",
-    "logo": "B",
-    "industry": "Semiconductor",
-    "employeeCount": "50,000+",
-    "founded": 1961,
-    "hq": "San Jose, California"
-  },
-  "Micron Technology": {
-    "ticker": "MU",
-    "logo": "M",
-    "industry": "Semiconductor",
-    "employeeCount": "48,000+",
-    "founded": 1978,
-    "hq": "Boise, Idaho"
-  },
-  "Texas Instruments": {
-    "ticker": "TXN",
-    "logo": "TI",
-    "industry": "Semiconductor",
-    "employeeCount": "30,000+",
-    "founded": 1930,
-    "hq": "Dallas, Texas"
-  },
-  "ASML": {
-    "ticker": "ASML",
-    "logo": "AS",
-    "industry": "Semiconductor",
-    "employeeCount": "42,000+",
-    "founded": 1984,
-    "hq": "Veldhoven, Netherlands"
-  },
-  "CrowdStrike": {
-    "ticker": "CRWD",
-    "logo": "CS",
-    "industry": "Cybersecurity",
-    "employeeCount": "8,500+",
-    "founded": 2011,
-    "hq": "Austin, Texas"
-  },
-  "Palo Alto Networks": {
-    "ticker": "PANW",
-    "logo": "PA",
-    "industry": "Cybersecurity",
-    "employeeCount": "15,000+",
-    "founded": 2005,
-    "hq": "Santa Clara, California"
-  },
-  "Fortinet": {
-    "ticker": "FTNT",
-    "logo": "F",
-    "industry": "Cybersecurity",
-    "employeeCount": "12,000+",
-    "founded": 2000,
-    "hq": "Sunnyvale, California"
-  },
-  "Check Point": {
-    "ticker": "CHKP",
-    "logo": "CP",
-    "industry": "Cybersecurity",
-    "employeeCount": "6,000+",
-    "founded": 1993,
-    "hq": "Tel Aviv, Israel"
-  },
-  "Okta": {
-    "ticker": "OKTA",
-    "logo": "O",
-    "industry": "Cybersecurity",
-    "employeeCount": "6,000+",
-    "founded": 2009,
-    "hq": "San Francisco, California"
-  },
-  "OpenAI": {
-    "ticker": "OAI",
-    "logo": "OA",
-    "industry": "AI/ML",
-    "employeeCount": "3,000+",
-    "founded": 2015,
-    "hq": "San Francisco, California"
-  },
-  "Anthropic": {
-    "ticker": "ANT",
-    "logo": "A",
-    "industry": "AI/ML",
-    "employeeCount": "1,500+",
-    "founded": 2021,
-    "hq": "San Francisco, California"
-  },
-  "Scale AI": {
-    "ticker": "SCAI",
-    "logo": "S",
-    "industry": "AI/ML",
-    "employeeCount": "800+",
-    "founded": 2016,
-    "hq": "San Francisco, California"
-  },
-  "Hugging Face": {
-    "ticker": "HF",
-    "logo": "HF",
-    "industry": "AI/ML",
-    "employeeCount": "400+",
-    "founded": 2016,
-    "hq": "New York, New York"
-  },
-  "DataRobot": {
-    "ticker": "DR",
-    "logo": "DR",
-    "industry": "AI/ML",
-    "employeeCount": "2,500+",
     "founded": 2012,
-    "hq": "Boston, Massachusetts"
+    "hq": "Bozeman, MT"
   },
-  "C3.ai": {
-    "ticker": "AI",
-    "logo": "C3",
-    "industry": "AI/ML",
-    "employeeCount": "2,400+",
-    "founded": 2009,
-    "hq": "Redwood City, California"
-  },
-  "SentinelOne": {
-    "ticker": "S",
-    "logo": "S1",
-    "industry": "AI/ML",
-    "employeeCount": "2,100+",
-    "founded": 2013,
-    "hq": "Mountain View, California"
-  },
-  "UiPath": {
-    "ticker": "PATH",
-    "logo": "UI",
-    "industry": "AI/ML",
-    "employeeCount": "4,200+",
-    "founded": 2005,
-    "hq": "New York, New York"
-  },
-  "Reddit": {
-    "ticker": "RDDT",
-    "logo": "R",
-    "industry": "Other Tech",
-    "employeeCount": "2,000+",
-    "founded": 2005,
-    "hq": "San Francisco, California"
-  },
-  "Zoom": {
-    "ticker": "ZM",
-    "logo": "Z",
-    "industry": "Enterprise Software",
-    "employeeCount": "8,400+",
-    "founded": 2011,
-    "hq": "San Jose, California"
-  },
-  "Slack": {
-    "ticker": "SLCK",
-    "logo": "S",
-    "industry": "Enterprise Software",
-    "employeeCount": "2,500+",
-    "founded": 2009,
-    "hq": "San Francisco, California"
+  "Datadog": {
+    "ticker": "DDOG",
+    "logo": "D",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "7,000+",
+    "founded": 2010,
+    "hq": "New York, NY"
   },
   "MongoDB": {
     "ticker": "MDB",
@@ -501,23 +277,239 @@
     "industry": "Cloud/SaaS",
     "employeeCount": "4,500+",
     "founded": 2007,
-    "hq": "New York, New York"
+    "hq": "New York, NY"
   },
-  "Confluent": {
-    "ticker": "CFLT",
-    "logo": "C",
+  "Zoom": {
+    "ticker": "ZM",
+    "logo": "Z",
     "industry": "Cloud/SaaS",
-    "employeeCount": "3,000+",
-    "founded": 2014,
-    "hq": "Mountain View, California"
+    "employeeCount": "8,000+",
+    "founded": 2011,
+    "hq": "San Jose, CA"
   },
-  "HashiCorp": {
-    "ticker": "HCP",
+  "DocuSign": {
+    "ticker": "DOCU",
+    "logo": "D",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "7,500+",
+    "founded": 2003,
+    "hq": "San Francisco, CA"
+  },
+  "Block": {
+    "ticker": "SQ",
+    "logo": "B",
+    "industry": "Fintech",
+    "employeeCount": "13,000+",
+    "founded": 2009,
+    "hq": "San Francisco, CA"
+  },
+  "Coinbase": {
+    "ticker": "COIN",
+    "logo": "C",
+    "industry": "Fintech",
+    "employeeCount": "4,500+",
+    "founded": 2012,
+    "hq": "San Francisco, CA"
+  },
+  "Robinhood": {
+    "ticker": "HOOD",
+    "logo": "R",
+    "industry": "Fintech",
+    "employeeCount": "3,800+",
+    "founded": 2013,
+    "hq": "Menlo Park, CA"
+  },
+  "Plaid": {
+    "ticker": "PLID",
+    "logo": "P",
+    "industry": "Fintech",
+    "employeeCount": "1,500+",
+    "founded": 2013,
+    "hq": "San Francisco, CA"
+  },
+  "Mastercard": {
+    "ticker": "MA",
+    "logo": "M",
+    "industry": "Fintech",
+    "employeeCount": "33,000+",
+    "founded": 1966,
+    "hq": "Purchase, NY"
+  },
+  "Visa": {
+    "ticker": "V",
+    "logo": "V",
+    "industry": "Fintech",
+    "employeeCount": "29,000+",
+    "founded": 1958,
+    "hq": "San Francisco, CA"
+  },
+  "Intuit": {
+    "ticker": "INTU",
+    "logo": "I",
+    "industry": "Fintech",
+    "employeeCount": "18,000+",
+    "founded": 1983,
+    "hq": "Mountain View, CA"
+  },
+  "Klarna": {
+    "ticker": "KLRN",
+    "logo": "K",
+    "industry": "Fintech",
+    "employeeCount": "5,000+",
+    "founded": 2005,
+    "hq": "Stockholm, Sweden"
+  },
+  "Discord": {
+    "ticker": "DISC",
+    "logo": "D",
+    "industry": "Gaming",
+    "employeeCount": "1,000+",
+    "founded": 2015,
+    "hq": "San Francisco, CA"
+  },
+  "Riot Games": {
+    "ticker": "RIOT",
+    "logo": "R",
+    "industry": "Gaming",
+    "employeeCount": "4,500+",
+    "founded": 2006,
+    "hq": "Los Angeles, CA"
+  },
+  "Epic Games": {
+    "ticker": "EPIC",
+    "logo": "E",
+    "industry": "Gaming",
+    "employeeCount": "4,000+",
+    "founded": 1991,
+    "hq": "Cary, NC"
+  },
+  "Take-Two Interactive": {
+    "ticker": "TTWO",
+    "logo": "T",
+    "industry": "Gaming",
+    "employeeCount": "11,000+",
+    "founded": 1993,
+    "hq": "New York, NY"
+  },
+  "Electronic Arts": {
+    "ticker": "EA",
+    "logo": "E",
+    "industry": "Gaming",
+    "employeeCount": "13,000+",
+    "founded": 1982,
+    "hq": "Redwood City, CA"
+  },
+  "Unity Technologies": {
+    "ticker": "U",
+    "logo": "U",
+    "industry": "Gaming",
+    "employeeCount": "7,500+",
+    "founded": 2004,
+    "hq": "San Francisco, CA"
+  },
+  "Zynga": {
+    "ticker": "ZNGA",
+    "logo": "Z",
+    "industry": "Gaming",
+    "employeeCount": "2,500+",
+    "founded": 2007,
+    "hq": "San Francisco, CA"
+  },
+  "Palo Alto Networks": {
+    "ticker": "PANW",
+    "logo": "P",
+    "industry": "Cybersecurity",
+    "employeeCount": "14,000+",
+    "founded": 2005,
+    "hq": "Santa Clara, CA"
+  },
+  "CrowdStrike": {
+    "ticker": "CRWD",
+    "logo": "C",
+    "industry": "Cybersecurity",
+    "employeeCount": "9,000+",
+    "founded": 2011,
+    "hq": "Austin, TX"
+  },
+  "Fortinet": {
+    "ticker": "FTNT",
+    "logo": "F",
+    "industry": "Cybersecurity",
+    "employeeCount": "14,000+",
+    "founded": 2000,
+    "hq": "Sunnyvale, CA"
+  },
+  "Zscaler": {
+    "ticker": "ZS",
+    "logo": "Z",
+    "industry": "Cybersecurity",
+    "employeeCount": "7,000+",
+    "founded": 2008,
+    "hq": "San Jose, CA"
+  },
+  "Check Point": {
+    "ticker": "CHKP",
+    "logo": "C",
+    "industry": "Cybersecurity",
+    "employeeCount": "6,000+",
+    "founded": 1993,
+    "hq": "Tel Aviv, Israel"
+  },
+  "SentinelOne": {
+    "ticker": "S",
+    "logo": "S",
+    "industry": "Cybersecurity",
+    "employeeCount": "2,000+",
+    "founded": 2013,
+    "hq": "Mountain View, CA"
+  },
+  "Okta": {
+    "ticker": "OKTA",
+    "logo": "O",
+    "industry": "Cybersecurity",
+    "employeeCount": "6,000+",
+    "founded": 2009,
+    "hq": "San Francisco, CA"
+  },
+  "Cloudflare": {
+    "ticker": "NET",
+    "logo": "C",
+    "industry": "Cybersecurity",
+    "employeeCount": "4,500+",
+    "founded": 2009,
+    "hq": "San Francisco, CA"
+  },
+  "HubSpot": {
+    "ticker": "HUBS",
     "logo": "H",
     "industry": "Cloud/SaaS",
-    "employeeCount": "2,000+",
-    "founded": 2012,
-    "hq": "San Francisco, California"
+    "employeeCount": "8,000+",
+    "founded": 2006,
+    "hq": "Cambridge, MA"
+  },
+  "Workday": {
+    "ticker": "WDAY",
+    "logo": "W",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "17,000+",
+    "founded": 2005,
+    "hq": "Pleasanton, CA"
+  },
+  "Slack": {
+    "ticker": "WORK",
+    "logo": "S",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "2,500+",
+    "founded": 2009,
+    "hq": "San Francisco, CA"
+  },
+  "Twilio": {
+    "ticker": "TWLO",
+    "logo": "T",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "9,000+",
+    "founded": 2008,
+    "hq": "San Francisco, CA"
   },
   "Elastic": {
     "ticker": "ESTC",
@@ -525,95 +517,7 @@
     "industry": "Cloud/SaaS",
     "employeeCount": "3,000+",
     "founded": 2012,
-    "hq": "Mountain View, California"
-  },
-  "Twilio": {
-    "ticker": "TWLO",
-    "logo": "T",
-    "industry": "Cloud/SaaS",
-    "employeeCount": "7,000+",
-    "founded": 2008,
-    "hq": "San Francisco, California"
-  },
-  "Datadog": {
-    "ticker": "DDOG",
-    "logo": "DD",
-    "industry": "Cloud/SaaS",
-    "employeeCount": "6,500+",
-    "founded": 2010,
-    "hq": "New York, New York"
-  },
-  "DocuSign": {
-    "ticker": "DOCU",
-    "logo": "D",
-    "industry": "Enterprise Software",
-    "employeeCount": "7,400+",
-    "founded": 2003,
-    "hq": "San Francisco, California"
-  },
-  "GitLab": {
-    "ticker": "GTLB",
-    "logo": "GL",
-    "industry": "Enterprise Software",
-    "employeeCount": "2,100+",
-    "founded": 2011,
-    "hq": "San Francisco, California"
-  },
-  "Splunk": {
-    "ticker": "SPLK",
-    "logo": "S",
-    "industry": "Enterprise Software",
-    "employeeCount": "7,500+",
-    "founded": 2003,
-    "hq": "San Francisco, California"
-  },
-  "JetBrains": {
-    "ticker": "JB",
-    "logo": "JB",
-    "industry": "Enterprise Software",
-    "employeeCount": "2,000+",
-    "founded": 2000,
-    "hq": "Prague, Czech Republic"
-  },
-  "Figma": {
-    "ticker": "FIG",
-    "logo": "F",
-    "industry": "Enterprise Software",
-    "employeeCount": "1,400+",
-    "founded": 2012,
-    "hq": "San Francisco, California"
-  },
-  "Canva": {
-    "ticker": "CVA",
-    "logo": "C",
-    "industry": "Enterprise Software",
-    "employeeCount": "4,000+",
-    "founded": 2013,
-    "hq": "Sydney, Australia"
-  },
-  "Discord": {
-    "ticker": "DISC",
-    "logo": "D",
-    "industry": "Other Tech",
-    "employeeCount": "1,000+",
-    "founded": 2012,
-    "hq": "San Francisco, California"
-  },
-  "Notion": {
-    "ticker": "NOT",
-    "logo": "N",
-    "industry": "Enterprise Software",
-    "employeeCount": "500+",
-    "founded": 2016,
-    "hq": "San Francisco, California"
-  },
-  "Airtable": {
-    "ticker": "AIR",
-    "logo": "A",
-    "industry": "Enterprise Software",
-    "employeeCount": "1,500+",
-    "founded": 2012,
-    "hq": "San Francisco, California"
+    "hq": "Amsterdam, Netherlands"
   },
   "Dropbox": {
     "ticker": "DBX",
@@ -621,7 +525,7 @@
     "industry": "Cloud/SaaS",
     "employeeCount": "3,000+",
     "founded": 2007,
-    "hq": "San Francisco, California"
+    "hq": "San Francisco, CA"
   },
   "Box": {
     "ticker": "BOX",
@@ -629,94 +533,326 @@
     "industry": "Cloud/SaaS",
     "employeeCount": "2,500+",
     "founded": 2005,
-    "hq": "Redwood City, California"
+    "hq": "Redwood City, CA"
+  },
+  "Splunk": {
+    "ticker": "SPLK",
+    "logo": "S",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "7,500+",
+    "founded": 2003,
+    "hq": "San Francisco, CA"
+  },
+  "Figma": {
+    "ticker": "FGMA",
+    "logo": "F",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "1,300+",
+    "founded": 2012,
+    "hq": "San Francisco, CA"
+  },
+  "Notion": {
+    "ticker": "NOTN",
+    "logo": "N",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "500+",
+    "founded": 2016,
+    "hq": "San Francisco, CA"
+  },
+  "Canva": {
+    "ticker": "CNVA",
+    "logo": "C",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "4,000+",
+    "founded": 2013,
+    "hq": "Sydney, Australia"
   },
   "Asana": {
     "ticker": "ASAN",
     "logo": "A",
-    "industry": "Enterprise Software",
-    "employeeCount": "2,600+",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "2,000+",
     "founded": 2008,
-    "hq": "San Francisco, California"
+    "hq": "San Francisco, CA"
   },
   "Monday.com": {
     "ticker": "MNDY",
     "logo": "M",
-    "industry": "Enterprise Software",
-    "employeeCount": "2,300+",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "2,500+",
     "founded": 2012,
     "hq": "Tel Aviv, Israel"
   },
-  "Zendesk": {
-    "ticker": "ZEN",
-    "logo": "Z",
-    "industry": "Enterprise Software",
-    "employeeCount": "6,700+",
-    "founded": 2007,
-    "hq": "San Francisco, California"
+  "Miro": {
+    "ticker": "MIRO",
+    "logo": "M",
+    "industry": "Cloud/SaaS",
+    "employeeCount": "2,000+",
+    "founded": 2011,
+    "hq": "San Francisco, CA"
   },
-  "HubSpot": {
-    "ticker": "HUBS",
-    "logo": "HS",
-    "industry": "Enterprise Software",
-    "employeeCount": "8,000+",
-    "founded": 2006,
-    "hq": "Cambridge, Massachusetts"
+  "Texas Instruments": {
+    "ticker": "TXN",
+    "logo": "T",
+    "industry": "Semiconductor",
+    "employeeCount": "34,000+",
+    "founded": 1930,
+    "hq": "Dallas, TX"
   },
-  "Klaviyo": {
-    "ticker": "KVYO",
+  "Applied Materials": {
+    "ticker": "AMAT",
+    "logo": "A",
+    "industry": "Semiconductor",
+    "employeeCount": "34,000+",
+    "founded": 1967,
+    "hq": "Santa Clara, CA"
+  },
+  "Lam Research": {
+    "ticker": "LRCX",
+    "logo": "L",
+    "industry": "Semiconductor",
+    "employeeCount": "17,000+",
+    "founded": 1980,
+    "hq": "Fremont, CA"
+  },
+  "KLA Corporation": {
+    "ticker": "KLAC",
     "logo": "K",
-    "industry": "Enterprise Software",
+    "industry": "Semiconductor",
+    "employeeCount": "15,000+",
+    "founded": 1997,
+    "hq": "Milpitas, CA"
+  },
+  "Analog Devices": {
+    "ticker": "ADI",
+    "logo": "A",
+    "industry": "Semiconductor",
+    "employeeCount": "25,000+",
+    "founded": 1965,
+    "hq": "Wilmington, MA"
+  },
+  "Marvell Technology": {
+    "ticker": "MRVL",
+    "logo": "M",
+    "industry": "Semiconductor",
+    "employeeCount": "6,500+",
+    "founded": 1995,
+    "hq": "Santa Clara, CA"
+  },
+  "NXP Semiconductors": {
+    "ticker": "NXPI",
+    "logo": "N",
+    "industry": "Semiconductor",
+    "employeeCount": "34,500+",
+    "founded": 2006,
+    "hq": "Eindhoven, Netherlands"
+  },
+  "Arm Holdings": {
+    "ticker": "ARM",
+    "logo": "A",
+    "industry": "Semiconductor",
+    "employeeCount": "7,000+",
+    "founded": 1990,
+    "hq": "Cambridge, UK"
+  },
+  "Cadence Design Systems": {
+    "ticker": "CDNS",
+    "logo": "C",
+    "industry": "Semiconductor",
+    "employeeCount": "10,000+",
+    "founded": 1988,
+    "hq": "San Jose, CA"
+  },
+  "Synopsys": {
+    "ticker": "SNPS",
+    "logo": "S",
+    "industry": "Semiconductor",
+    "employeeCount": "18,000+",
+    "founded": 1986,
+    "hq": "Mountain View, CA"
+  },
+  "Shopee": {
+    "ticker": "SE",
+    "logo": "S",
+    "industry": "E-commerce",
+    "employeeCount": "40,000+",
+    "founded": 2015,
+    "hq": "Singapore"
+  },
+  "eBay": {
+    "ticker": "EBAY",
+    "logo": "E",
+    "industry": "E-commerce",
+    "employeeCount": "11,000+",
+    "founded": 1995,
+    "hq": "San Jose, CA"
+  },
+  "Etsy": {
+    "ticker": "ETSY",
+    "logo": "E",
+    "industry": "E-commerce",
+    "employeeCount": "2,500+",
+    "founded": 2005,
+    "hq": "Brooklyn, NY"
+  },
+  "MercadoLibre": {
+    "ticker": "MELI",
+    "logo": "M",
+    "industry": "E-commerce",
+    "employeeCount": "40,000+",
+    "founded": 1999,
+    "hq": "Buenos Aires, Argentina"
+  },
+  "C3.ai": {
+    "ticker": "AI",
+    "logo": "C",
+    "industry": "AI/ML",
+    "employeeCount": "2,500+",
+    "founded": 2009,
+    "hq": "Redwood City, CA"
+  },
+  "UiPath": {
+    "ticker": "PATH",
+    "logo": "U",
+    "industry": "AI/ML",
+    "employeeCount": "4,500+",
+    "founded": 2005,
+    "hq": "New York, NY"
+  },
+  "DataRobot": {
+    "ticker": "DBOT",
+    "logo": "D",
+    "industry": "AI/ML",
     "employeeCount": "2,000+",
     "founded": 2012,
-    "hq": "Boston, Massachusetts"
+    "hq": "Boston, MA"
   },
-  "Plaid": {
-    "ticker": "PLD",
-    "logo": "P",
-    "industry": "Fintech",
-    "employeeCount": "1,600+",
-    "founded": 2013,
-    "hq": "San Francisco, California"
-  },
-  "Instacart": {
-    "ticker": "CART",
-    "logo": "I",
-    "industry": "E-commerce",
-    "employeeCount": "3,000+",
+  "H2O.ai": {
+    "ticker": "H2O",
+    "logo": "H",
+    "industry": "AI/ML",
+    "employeeCount": "500+",
     "founded": 2012,
-    "hq": "San Francisco, California"
+    "hq": "Mountain View, CA"
   },
-  "DoorDash": {
-    "ticker": "DASH",
-    "logo": "DD",
-    "industry": "E-commerce",
-    "employeeCount": "8,600+",
-    "founded": 2013,
-    "hq": "San Francisco, California"
+  "Scale AI": {
+    "ticker": "SCAI",
+    "logo": "S",
+    "industry": "AI/ML",
+    "employeeCount": "1,000+",
+    "founded": 2016,
+    "hq": "San Francisco, CA"
   },
-  "Airbnb": {
-    "ticker": "ABNB",
-    "logo": "A",
-    "industry": "E-commerce",
-    "employeeCount": "6,800+",
-    "founded": 2008,
-    "hq": "San Francisco, California"
+  "xAI": {
+    "ticker": "XAI",
+    "logo": "X",
+    "industry": "AI/ML",
+    "employeeCount": "500+",
+    "founded": 2023,
+    "hq": "San Francisco, CA"
+  },
+  "Hugging Face": {
+    "ticker": "HF",
+    "logo": "H",
+    "industry": "AI/ML",
+    "employeeCount": "300+",
+    "founded": 2016,
+    "hq": "New York, NY"
+  },
+  "Stability AI": {
+    "ticker": "STAI",
+    "logo": "S",
+    "industry": "AI/ML",
+    "employeeCount": "200+",
+    "founded": 2019,
+    "hq": "London, UK"
   },
   "ByteDance": {
     "ticker": "BD",
-    "logo": "BD",
+    "logo": "B",
     "industry": "Startup/Unicorn",
     "employeeCount": "150,000+",
     "founded": 2012,
     "hq": "Beijing, China"
   },
-  "SpaceX": {
-    "ticker": "SPCE",
-    "logo": "SX",
+  "Reddit": {
+    "ticker": "RDDT",
+    "logo": "R",
     "industry": "Startup/Unicorn",
-    "employeeCount": "13,000+",
-    "founded": 2002,
-    "hq": "Hawthorne, California"
+    "employeeCount": "2,000+",
+    "founded": 2005,
+    "hq": "San Francisco, CA"
+  },
+  "Airbnb": {
+    "ticker": "ABNB",
+    "logo": "A",
+    "industry": "Other Tech",
+    "employeeCount": "6,000+",
+    "founded": 2008,
+    "hq": "San Francisco, CA"
+  },
+  "DoorDash": {
+    "ticker": "DASH",
+    "logo": "D",
+    "industry": "Other Tech",
+    "employeeCount": "8,000+",
+    "founded": 2013,
+    "hq": "San Francisco, CA"
+  },
+  "Lyft": {
+    "ticker": "LYFT",
+    "logo": "L",
+    "industry": "Other Tech",
+    "employeeCount": "4,000+",
+    "founded": 2012,
+    "hq": "San Francisco, CA"
+  },
+  "Spotify": {
+    "ticker": "SPOT",
+    "logo": "S",
+    "industry": "Other Tech",
+    "employeeCount": "9,000+",
+    "founded": 2006,
+    "hq": "Stockholm, Sweden"
+  },
+  "Verizon": {
+    "ticker": "VZ",
+    "logo": "V",
+    "industry": "Telecom",
+    "employeeCount": "117,000+",
+    "founded": 1983,
+    "hq": "New York, NY"
+  },
+  "AT&T": {
+    "ticker": "T",
+    "logo": "A",
+    "industry": "Telecom",
+    "employeeCount": "160,000+",
+    "founded": 1983,
+    "hq": "Dallas, TX"
+  },
+  "T-Mobile": {
+    "ticker": "TMUS",
+    "logo": "T",
+    "industry": "Telecom",
+    "employeeCount": "75,000+",
+    "founded": 1994,
+    "hq": "Bellevue, WA"
+  },
+  "Cisco Systems": {
+    "ticker": "CSCO",
+    "logo": "C",
+    "industry": "Hardware",
+    "employeeCount": "83,000+",
+    "founded": 1984,
+    "hq": "San Jose, CA"
+  },
+  "Dell Technologies": {
+    "ticker": "DELL",
+    "logo": "D",
+    "industry": "Hardware",
+    "employeeCount": "120,000+",
+    "founded": 1984,
+    "hq": "Round Rock, TX"
   }
 }

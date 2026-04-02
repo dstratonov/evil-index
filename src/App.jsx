@@ -67,21 +67,27 @@ const App = () => {
 
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8px 32px 60px' }}>
           <div style={{
-            background: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(255,255,255,0.06)',
-            borderRadius: 6,
-            padding: '10px 16px',
-            marginBottom: 16,
-            fontSize: 10,
-            lineHeight: 1.7,
-            color: 'rgba(255,255,255,0.35)',
+            background: 'linear-gradient(135deg, rgba(255,167,38,0.08), rgba(255,167,38,0.03))',
+            border: '1px solid rgba(255,167,38,0.25)',
+            borderRadius: 8,
+            padding: '14px 20px',
+            marginBottom: 20,
+            fontSize: 11,
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.55)',
             fontFamily: "'JetBrains Mono', monospace",
             textAlign: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 12,
           }}>
-            All data on this site is collected and analyzed entirely by AI. Scores are generated
-            automatically based on publicly available information and may not accurately reflect actual
-            working conditions. This is an experimental project &mdash; please do not treat these scores
-            as definitive judgments. Always do your own research.
+            <span style={{ fontSize: 20, flexShrink: 0, opacity: 0.7 }}>{'\u26A0'}</span>
+            <span>
+              All data is collected and analyzed entirely by <strong style={{ color: 'rgba(255,167,38,0.85)' }}>AI</strong>.
+              Scores are generated automatically from public sources and may not reflect actual working conditions.
+              This is an experimental project &mdash; not a definitive judgment. Always do your own research.
+            </span>
           </div>
 
           <div
